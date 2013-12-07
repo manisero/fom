@@ -38,7 +38,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'datamanager',
-    'rest_framework'
+    'rest_framework',
+    'south'
 )
 
 MIDDLEWARE_CLASSES = (
