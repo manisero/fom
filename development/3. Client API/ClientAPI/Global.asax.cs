@@ -3,7 +3,10 @@ using System.ServiceModel.Activation;
 using System.Web;
 using System.Web.Routing;
 using ClientAPI.AutoMapper;
+using ClientAPI.Ninject;
 using ClientAPI._Impl;
+using Core.DependencyResolution;
+using Ninject;
 
 namespace ClientAPI
 {
@@ -12,6 +15,9 @@ namespace ClientAPI
         protected void Application_Start(object sender, EventArgs e)
         {
             new AutoMapperBootstrapper().Bootstrap();
+
+            var kernel = new NinjectBootstrapper().CreateApplicationKernel();
+            DependencyResolverContainer.DependencyResolver = kernel.Get<IDependencyResolver>();
 
             RouteTable.Routes.Add(new ServiceRoute("api", new WebServiceHostFactory(), typeof(ClientAPIService)));
         }

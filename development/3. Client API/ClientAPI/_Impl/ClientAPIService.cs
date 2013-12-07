@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.ServiceModel;
 using System.ServiceModel.Activation;
 using ClientAPI.Contract;
 using DataSource.DataAccess;
@@ -8,13 +9,14 @@ using System.Linq;
 namespace ClientAPI._Impl
 {
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
+    [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerCall)]
     public class ClientAPIService : IClientAPIService
     {
         private readonly IDataProvider _dataProvider;
 
-        public ClientAPIService(IDataProvider dataProvider)
+        public ClientAPIService()
         {
-            _dataProvider = dataProvider;
+            _dataProvider = DependencyResolverContainer.DependencyResolver.Resolve<IDataProvider>();
         }
 
         public List<Restaurant> GetAllRestaurants()

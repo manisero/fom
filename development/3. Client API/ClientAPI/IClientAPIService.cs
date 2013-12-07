@@ -9,7 +9,7 @@ namespace ClientAPI
     public interface IClientAPIService
     {
         [OperationContract]
-        [WebGet(UriTemplate = "restaurant")]
+        [WebGet(UriTemplate = "/restaurant")]
         List<Restaurant> GetAllRestaurants();
     }
 }
