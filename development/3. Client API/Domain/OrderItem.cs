@@ -2,6 +2,8 @@
 {
     public class OrderItem
     {
+        public int OrderItemID { get; set; }
+
         public Order Order { get; set; }
 
         public Person Person { get; set; }

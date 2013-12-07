@@ -57,8 +57,17 @@
     <Compile Include="Migrations\201312071522549_Person_and_Order_configuration.Designer.cs">
       <DependentUpon>201312071522549_Person_and_Order_configuration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201312071534596_OrderItems_entity.cs" />
+    <Compile Include="Migrations\201312071534596_OrderItems_entity.Designer.cs">
+      <DependentUpon>201312071534596_OrderItems_entity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201312071535558_Payment_entity.cs" />
+    <Compile Include="Migrations\201312071535558_Payment_entity.Designer.cs">
+      <DependentUpon>201312071535558_Payment_entity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelConfiguration\Configurations\OrderConfiguration.cs" />
+    <Compile Include="ModelConfiguration\Configurations\OrderItemConfiguration.cs" />
     <Compile Include="ModelConfiguration\Configurations\PersonConfiguration.cs" />
     <Compile Include="ModelConfiguration\EntityConfigurationBase.cs" />
     <Compile Include="ModelConfiguration\IEntityConfiguration.cs" />
@@ -85,6 +94,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201312071522549_Person_and_Order_configuration.resx">
       <DependentUpon>201312071522549_Person_and_Order_configuration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201312071534596_OrderItems_entity.resx">
+      <DependentUpon>201312071534596_OrderItems_entity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201312071535558_Payment_entity.resx">
+      <DependentUpon>201312071535558_Payment_entity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
