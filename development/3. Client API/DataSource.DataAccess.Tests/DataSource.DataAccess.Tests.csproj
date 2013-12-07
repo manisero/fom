@@ -83,6 +83,7 @@
     <Compile Include="RestClientTests\ConnectivityTests.cs" />
     <Compile Include="RestClientTests\GetTests.cs" />
     <Compile Include="RestClientTests\SettingsProvider.cs" />
+    <Compile Include="TestsBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
