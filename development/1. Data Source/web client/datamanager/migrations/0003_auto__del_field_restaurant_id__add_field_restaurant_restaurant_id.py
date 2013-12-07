@@ -13,7 +13,7 @@ class Migration(SchemaMigration):
 
         # Adding field 'Restaurant.restaurant_id'
         db.add_column(u'datamanager_restaurant', 'restaurant_id',
-                      self.gf('django.db.models.fields.AutoField')(default=0, primary_key=True),
+                      self.gf('django.db.models.fields.AutoField')(default=1, primary_key=True),
                       keep_default=False)
 
 

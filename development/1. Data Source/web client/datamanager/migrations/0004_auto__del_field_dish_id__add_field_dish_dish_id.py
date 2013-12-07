@@ -13,7 +13,7 @@ class Migration(SchemaMigration):
 
         # Adding field 'Dish.dish_id'
         db.add_column(u'datamanager_dish', 'dish_id',
-                      self.gf('django.db.models.fields.AutoField')(default=0, primary_key=True),
+                      self.gf('django.db.models.fields.AutoField')(default=1, primary_key=True),
                       keep_default=False)
 
 
