@@ -17,7 +17,7 @@ namespace DataSource.DataAccess._Impl
 
         public IEnumerable<Restaurant> GetRestaurants()
         {
-            var response = _restClient.Get("Restaurants");
+            var response = _restClient.Get("restaurants");
 
             return _jsonSerializer.Deserialize<IEnumerable<Restaurant>>(response);
         }
