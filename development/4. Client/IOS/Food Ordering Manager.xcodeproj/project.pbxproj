@@ -1,0 +1,482 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8CEF3B1318537DCE0046C217 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEF3B1218537DCE0046C217 /* Foundation.framework */; };
+		8CEF3B1518537DCE0046C217 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEF3B1418537DCE0046C217 /* CoreGraphics.framework */; };
+		8CEF3B1718537DCE0046C217 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEF3B1618537DCE0046C217 /* UIKit.framework */; };
+		8CEF3B1D18537DCE0046C217 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CEF3B1B18537DCE0046C217 /* InfoPlist.strings */; };
+		8CEF3B1F18537DCE0046C217 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF3B1E18537DCE0046C217 /* main.m */; };
+		8CEF3B2318537DCE0046C217 /* FOMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF3B2218537DCE0046C217 /* FOMAppDelegate.m */; };
+		8CEF3B2618537DCE0046C217 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CEF3B2418537DCE0046C217 /* Main.storyboard */; };
+		8CEF3B2918537DCE0046C217 /* FOMStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF3B2818537DCE0046C217 /* FOMStartViewController.m */; };
+		8CEF3B2B18537DCE0046C217 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CEF3B2A18537DCE0046C217 /* Images.xcassets */; };
+		8CEF3B3218537DCE0046C217 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEF3B3118537DCE0046C217 /* XCTest.framework */; };
+		8CEF3B3318537DCE0046C217 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEF3B1218537DCE0046C217 /* Foundation.framework */; };
+		8CEF3B3418537DCE0046C217 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEF3B1618537DCE0046C217 /* UIKit.framework */; };
+		8CEF3B3C18537DCE0046C217 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CEF3B3A18537DCE0046C217 /* InfoPlist.strings */; };
+		8CEF3B3E18537DCE0046C217 /* Food_Ordering_ManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF3B3D18537DCE0046C217 /* Food_Ordering_ManagerTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8CEF3B3518537DCE0046C217 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8CEF3B0718537DCE0046C217 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8CEF3B0E18537DCE0046C217;
+			remoteInfo = "Food Ordering Manager";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8CEF3B0F18537DCE0046C217 /* Food Ordering Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Food Ordering Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CEF3B1218537DCE0046C217 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8CEF3B1418537DCE0046C217 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8CEF3B1618537DCE0046C217 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8CEF3B1A18537DCE0046C217 /* Food Ordering Manager-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Food Ordering Manager-Info.plist"; sourceTree = "<group>"; };
+		8CEF3B1C18537DCE0046C217 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8CEF3B1E18537DCE0046C217 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8CEF3B2018537DCE0046C217 /* Food Ordering Manager-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Food Ordering Manager-Prefix.pch"; sourceTree = "<group>"; };
+		8CEF3B2118537DCE0046C217 /* FOMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FOMAppDelegate.h; sourceTree = "<group>"; };
+		8CEF3B2218537DCE0046C217 /* FOMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FOMAppDelegate.m; sourceTree = "<group>"; };
+		8CEF3B2518537DCE0046C217 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8CEF3B2718537DCE0046C217 /* FOMStartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FOMStartViewController.h; sourceTree = "<group>"; };
+		8CEF3B2818537DCE0046C217 /* FOMStartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FOMStartViewController.m; sourceTree = "<group>"; };
+		8CEF3B2A18537DCE0046C217 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8CEF3B3018537DCE0046C217 /* Food Ordering ManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Food Ordering ManagerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CEF3B3118537DCE0046C217 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		8CEF3B3918537DCE0046C217 /* Food Ordering ManagerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Food Ordering ManagerTests-Info.plist"; sourceTree = "<group>"; };
+		8CEF3B3B18537DCE0046C217 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8CEF3B3D18537DCE0046C217 /* Food_Ordering_ManagerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Food_Ordering_ManagerTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8CEF3B0C18537DCE0046C217 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CEF3B1518537DCE0046C217 /* CoreGraphics.framework in Frameworks */,
+				8CEF3B1718537DCE0046C217 /* UIKit.framework in Frameworks */,
+				8CEF3B1318537DCE0046C217 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CEF3B2D18537DCE0046C217 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CEF3B3218537DCE0046C217 /* XCTest.framework in Frameworks */,
+				8CEF3B3418537DCE0046C217 /* UIKit.framework in Frameworks */,
+				8CEF3B3318537DCE0046C217 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8CEF3B0618537DCE0046C217 = {
+			isa = PBXGroup;
+			children = (
+				8CEF3B1818537DCE0046C217 /* Food Ordering Manager */,
+				8CEF3B3718537DCE0046C217 /* Food Ordering ManagerTests */,
+				8CEF3B1118537DCE0046C217 /* Frameworks */,
+				8CEF3B1018537DCE0046C217 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8CEF3B1018537DCE0046C217 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8CEF3B0F18537DCE0046C217 /* Food Ordering Manager.app */,
+				8CEF3B3018537DCE0046C217 /* Food Ordering ManagerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8CEF3B1118537DCE0046C217 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8CEF3B1218537DCE0046C217 /* Foundation.framework */,
+				8CEF3B1418537DCE0046C217 /* CoreGraphics.framework */,
+				8CEF3B1618537DCE0046C217 /* UIKit.framework */,
+				8CEF3B3118537DCE0046C217 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8CEF3B1818537DCE0046C217 /* Food Ordering Manager */ = {
+			isa = PBXGroup;
+			children = (
+				8CEF3B2118537DCE0046C217 /* FOMAppDelegate.h */,
+				8CEF3B2218537DCE0046C217 /* FOMAppDelegate.m */,
+				8CEF3B2418537DCE0046C217 /* Main.storyboard */,
+				8CEF3B2718537DCE0046C217 /* FOMStartViewController.h */,
+				8CEF3B2818537DCE0046C217 /* FOMStartViewController.m */,
+				8CEF3B2A18537DCE0046C217 /* Images.xcassets */,
+				8CEF3B1918537DCE0046C217 /* Supporting Files */,
+			);
+			path = "Food Ordering Manager";
+			sourceTree = "<group>";
+		};
+		8CEF3B1918537DCE0046C217 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8CEF3B1A18537DCE0046C217 /* Food Ordering Manager-Info.plist */,
+				8CEF3B1B18537DCE0046C217 /* InfoPlist.strings */,
+				8CEF3B1E18537DCE0046C217 /* main.m */,
+				8CEF3B2018537DCE0046C217 /* Food Ordering Manager-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8CEF3B3718537DCE0046C217 /* Food Ordering ManagerTests */ = {
+			isa = PBXGroup;
+			children = (
+				8CEF3B3D18537DCE0046C217 /* Food_Ordering_ManagerTests.m */,
+				8CEF3B3818537DCE0046C217 /* Supporting Files */,
+			);
+			path = "Food Ordering ManagerTests";
+			sourceTree = "<group>";
+		};
+		8CEF3B3818537DCE0046C217 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8CEF3B3918537DCE0046C217 /* Food Ordering ManagerTests-Info.plist */,
+				8CEF3B3A18537DCE0046C217 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8CEF3B0E18537DCE0046C217 /* Food Ordering Manager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8CEF3B4118537DCE0046C217 /* Build configuration list for PBXNativeTarget "Food Ordering Manager" */;
+			buildPhases = (
+				8CEF3B0B18537DCE0046C217 /* Sources */,
+				8CEF3B0C18537DCE0046C217 /* Frameworks */,
+				8CEF3B0D18537DCE0046C217 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Food Ordering Manager";
+			productName = "Food Ordering Manager";
+			productReference = 8CEF3B0F18537DCE0046C217 /* Food Ordering Manager.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8CEF3B2F18537DCE0046C217 /* Food Ordering ManagerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8CEF3B4418537DCE0046C217 /* Build configuration list for PBXNativeTarget "Food Ordering ManagerTests" */;
+			buildPhases = (
+				8CEF3B2C18537DCE0046C217 /* Sources */,
+				8CEF3B2D18537DCE0046C217 /* Frameworks */,
+				8CEF3B2E18537DCE0046C217 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8CEF3B3618537DCE0046C217 /* PBXTargetDependency */,
+			);
+			name = "Food Ordering ManagerTests";
+			productName = "Food Ordering ManagerTests";
+			productReference = 8CEF3B3018537DCE0046C217 /* Food Ordering ManagerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8CEF3B0718537DCE0046C217 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = FOM;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Jakub Turek";
+				TargetAttributes = {
+					8CEF3B2F18537DCE0046C217 = {
+						TestTargetID = 8CEF3B0E18537DCE0046C217;
+					};
+				};
+			};
+			buildConfigurationList = 8CEF3B0A18537DCE0046C217 /* Build configuration list for PBXProject "Food Ordering Manager" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8CEF3B0618537DCE0046C217;
+			productRefGroup = 8CEF3B1018537DCE0046C217 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8CEF3B0E18537DCE0046C217 /* Food Ordering Manager */,
+				8CEF3B2F18537DCE0046C217 /* Food Ordering ManagerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8CEF3B0D18537DCE0046C217 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CEF3B2B18537DCE0046C217 /* Images.xcassets in Resources */,
+				8CEF3B1D18537DCE0046C217 /* InfoPlist.strings in Resources */,
+				8CEF3B2618537DCE0046C217 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CEF3B2E18537DCE0046C217 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CEF3B3C18537DCE0046C217 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8CEF3B0B18537DCE0046C217 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CEF3B2918537DCE0046C217 /* FOMStartViewController.m in Sources */,
+				8CEF3B1F18537DCE0046C217 /* main.m in Sources */,
+				8CEF3B2318537DCE0046C217 /* FOMAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CEF3B2C18537DCE0046C217 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CEF3B3E18537DCE0046C217 /* Food_Ordering_ManagerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8CEF3B3618537DCE0046C217 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8CEF3B0E18537DCE0046C217 /* Food Ordering Manager */;
+			targetProxy = 8CEF3B3518537DCE0046C217 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8CEF3B1B18537DCE0046C217 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8CEF3B1C18537DCE0046C217 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8CEF3B2418537DCE0046C217 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8CEF3B2518537DCE0046C217 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8CEF3B3A18537DCE0046C217 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8CEF3B3B18537DCE0046C217 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8CEF3B3F18537DCE0046C217 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		8CEF3B4018537DCE0046C217 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8CEF3B4218537DCE0046C217 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Food Ordering Manager/Food Ordering Manager-Prefix.pch";
+				INFOPLIST_FILE = "Food Ordering Manager/Food Ordering Manager-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		8CEF3B4318537DCE0046C217 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Food Ordering Manager/Food Ordering Manager-Prefix.pch";
+				INFOPLIST_FILE = "Food Ordering Manager/Food Ordering Manager-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		8CEF3B4518537DCE0046C217 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Food Ordering Manager.app/Food Ordering Manager";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Food Ordering Manager/Food Ordering Manager-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Food Ordering ManagerTests/Food Ordering ManagerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		8CEF3B4618537DCE0046C217 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Food Ordering Manager.app/Food Ordering Manager";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Food Ordering Manager/Food Ordering Manager-Prefix.pch";
+				INFOPLIST_FILE = "Food Ordering ManagerTests/Food Ordering ManagerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8CEF3B0A18537DCE0046C217 /* Build configuration list for PBXProject "Food Ordering Manager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CEF3B3F18537DCE0046C217 /* Debug */,
+				8CEF3B4018537DCE0046C217 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8CEF3B4118537DCE0046C217 /* Build configuration list for PBXNativeTarget "Food Ordering Manager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CEF3B4218537DCE0046C217 /* Debug */,
+				8CEF3B4318537DCE0046C217 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8CEF3B4418537DCE0046C217 /* Build configuration list for PBXNativeTarget "Food Ordering ManagerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CEF3B4518537DCE0046C217 /* Debug */,
+				8CEF3B4618537DCE0046C217 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8CEF3B0718537DCE0046C217 /* Project object */;
+}

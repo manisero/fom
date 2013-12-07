@@ -1,6 +1,6 @@
 //
-//  FoodOrderingManagerTests.m
-//  FoodOrderingManagerTests
+//  Food_Ordering_ManagerTests.m
+//  Food Ordering ManagerTests
 //
 //  Created by Jakub Turek on 07.12.2013.
 //  Copyright (c) 2013 Jakub Turek. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface FoodOrderingManagerTests : XCTestCase
+@interface Food_Ordering_ManagerTests : XCTestCase
 
 @end
 
-@implementation FoodOrderingManagerTests
+@implementation Food_Ordering_ManagerTests
 
 - (void)setUp
 {
