@@ -6,10 +6,10 @@ using ClientAPI.Contract;
 namespace ClientAPI
 {
     [ServiceContract]
-    public interface IRestaurantService
+    public interface IClientAPIService
     {
         [OperationContract]
-        [WebGet(UriTemplate = "")]
+        [WebGet(UriTemplate = "restaurant")]
         List<Restaurant> GetAllRestaurants();
     }
 }

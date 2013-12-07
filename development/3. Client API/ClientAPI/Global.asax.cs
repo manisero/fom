@@ -2,17 +2,18 @@
 using System.ServiceModel.Activation;
 using System.Web;
 using System.Web.Routing;
+using ClientAPI.AutoMapper;
 using ClientAPI._Impl;
 
 namespace ClientAPI
 {
     public class Global : HttpApplication
     {
-        private const string SERVICE_ROUTE_PREFIX_TEMPLATE = "api/{0}";
-
         protected void Application_Start(object sender, EventArgs e)
         {
-            RouteTable.Routes.Add(new ServiceRoute(string.Format(SERVICE_ROUTE_PREFIX_TEMPLATE, "Restaurant"), new WebServiceHostFactory(), typeof(RestaurantService)));
+            new AutoMapperBootstrapper().Bootstrap();
+
+            RouteTable.Routes.Add(new ServiceRoute("api", new WebServiceHostFactory(), typeof(ClientAPIService)));
         }
 
         protected void Session_Start(object sender, EventArgs e)
