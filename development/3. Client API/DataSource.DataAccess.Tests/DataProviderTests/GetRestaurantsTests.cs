@@ -13,7 +13,7 @@ namespace DataSource.DataAccess.Tests.DataProviderTests
         private IEnumerable<Restaurant> Execute()
         {
             // Arrange
-            AutoMoqer.GetMock<IRestClient>().Setup(x => x.Get("Restaurants")).Returns(TestData.RestaurantsJSON);
+            AutoMoqer.GetMock<IRestClient>().Setup(x => x.Get("restaurants")).Returns(TestData.RestaurantsJSON);
             AutoMoqer.SetInstance<IJsonSerializer>(new JsonSerializer());
 
             // Act
