@@ -73,7 +73,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataProviderTests\DataProviderTests.cs" />
+    <Compile Include="DataProviderTests\GetRestaurantsTests.cs" />
     <Compile Include="DataProviderTests\TestData.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

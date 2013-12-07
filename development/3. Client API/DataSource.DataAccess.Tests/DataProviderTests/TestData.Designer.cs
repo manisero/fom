@@ -61,7 +61,7 @@ namespace DataSource.DataAccess.Tests.DataProviderTests {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [{&quot;url&quot;: &quot;http://192.168.1.147:8080/api/restaurants/1/&quot;, &quot;name&quot;: &quot;Hawaii Pizza&quot;, &quot;address&quot;: &quot;ul.Micha\u0142a Spisaka 44\r\n02-495 Warszawa&quot;, &quot;phone_number&quot;: &quot;226684613&quot;, &quot;email_address&quot;: &quot;biuro@hawaiipizza.pl&quot;}].
+        ///   Looks up a localized string similar to [{&quot;restaurant_id&quot;: 1, &quot;name&quot;: &quot;Hawaii Pizza&quot;, &quot;address&quot;: &quot;ul.Micha\u0142a Spisaka 44\r\n02-495 Warszawa&quot;, &quot;phone_number&quot;: &quot;226684613&quot;, &quot;email_address&quot;: &quot;biuro@hawaiipizza.pl&quot;, &quot;dishes&quot;: [{&quot;dish_id&quot;: 3, &quot;restaurant_id&quot;: 1, &quot;name&quot;: &quot;Lunch dnia&quot;, &quot;price&quot;: &quot;15.50&quot;, &quot;description&quot;: &quot;Ka\u017cdego dnia w tygodniu, w godzinach 12.00-16.00, nowa oferta lunchowa. Szczeg\u00f3\u0142y na: http://www.hawaiipizza.pl/index.php/lunch.&quot;}]}].
         /// </summary>
         internal static string RestaurantsJSON {
             get {

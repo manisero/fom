@@ -118,6 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="RestaurantsJSON" xml:space="preserve">
-    <value>[{"url": "http://192.168.1.147:8080/api/restaurants/1/", "name": "Hawaii Pizza", "address": "ul.Micha\u0142a Spisaka 44\r\n02-495 Warszawa", "phone_number": "226684613", "email_address": "biuro@hawaiipizza.pl"}]</value>
+    <value>[{"restaurant_id": 1, "name": "Hawaii Pizza", "address": "ul.Micha\u0142a Spisaka 44\r\n02-495 Warszawa", "phone_number": "226684613", "email_address": "biuro@hawaiipizza.pl", "dishes": [{"dish_id": 3, "restaurant_id": 1, "name": "Lunch dnia", "price": "15.50", "description": "Ka\u017cdego dnia w tygodniu, w godzinach 12.00-16.00, nowa oferta lunchowa. Szczeg\u00f3\u0142y na: http://www.hawaiipizza.pl/index.php/lunch."}]}]</value>
   </data>
 </root>
