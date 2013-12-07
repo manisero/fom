@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  Food Ordering Manager
+
+  Created by Jakub Turek on 07.12.2013.
+  Copyright (c) 2013 Jakub Turek. All rights reserved.
+*/
+
+"New Order" = "Utwórz zamówienie";
+"New Order Header" = "Nowe zamówienie";
+"Existing Order Header" = "Istniejące zamówienie";

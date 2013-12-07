@@ -1,5 +1,5 @@
 //
-//  FOMViewController.h
+//  FOMNewOrderViewController.h
 //  Food Ordering Manager
 //
 //  Created by Jakub Turek on 07.12.2013.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FOMStartViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+@interface FOMNewOrderViewController : UIViewController
 
 @end

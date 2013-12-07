@@ -10,17 +10,18 @@
 		8CEF3B1318537DCE0046C217 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEF3B1218537DCE0046C217 /* Foundation.framework */; };
 		8CEF3B1518537DCE0046C217 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEF3B1418537DCE0046C217 /* CoreGraphics.framework */; };
 		8CEF3B1718537DCE0046C217 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEF3B1618537DCE0046C217 /* UIKit.framework */; };
-		8CEF3B1D18537DCE0046C217 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CEF3B1B18537DCE0046C217 /* InfoPlist.strings */; };
 		8CEF3B1F18537DCE0046C217 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF3B1E18537DCE0046C217 /* main.m */; };
 		8CEF3B2318537DCE0046C217 /* FOMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF3B2218537DCE0046C217 /* FOMAppDelegate.m */; };
 		8CEF3B2618537DCE0046C217 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CEF3B2418537DCE0046C217 /* Main.storyboard */; };
-		8CEF3B2918537DCE0046C217 /* FOMStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF3B2818537DCE0046C217 /* FOMStartViewController.m */; };
+		8CEF3B2918537DCE0046C217 /* FOMRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF3B2818537DCE0046C217 /* FOMRootViewController.m */; };
 		8CEF3B2B18537DCE0046C217 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CEF3B2A18537DCE0046C217 /* Images.xcassets */; };
 		8CEF3B3218537DCE0046C217 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEF3B3118537DCE0046C217 /* XCTest.framework */; };
 		8CEF3B3318537DCE0046C217 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEF3B1218537DCE0046C217 /* Foundation.framework */; };
 		8CEF3B3418537DCE0046C217 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEF3B1618537DCE0046C217 /* UIKit.framework */; };
-		8CEF3B3C18537DCE0046C217 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CEF3B3A18537DCE0046C217 /* InfoPlist.strings */; };
 		8CEF3B3E18537DCE0046C217 /* Food_Ordering_ManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF3B3D18537DCE0046C217 /* Food_Ordering_ManagerTests.m */; };
+		8CEF3B4A1853812E0046C217 /* FOMOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF3B491853812E0046C217 /* FOMOrder.m */; };
+		8CEF3B51185384E30046C217 /* FOMNewOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF3B50185384E30046C217 /* FOMNewOrderViewController.m */; };
+		8CEF3B56185387B60046C217 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CEF3B58185387B60046C217 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,20 +40,24 @@
 		8CEF3B1418537DCE0046C217 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		8CEF3B1618537DCE0046C217 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8CEF3B1A18537DCE0046C217 /* Food Ordering Manager-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Food Ordering Manager-Info.plist"; sourceTree = "<group>"; };
-		8CEF3B1C18537DCE0046C217 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8CEF3B1E18537DCE0046C217 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8CEF3B2018537DCE0046C217 /* Food Ordering Manager-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Food Ordering Manager-Prefix.pch"; sourceTree = "<group>"; };
 		8CEF3B2118537DCE0046C217 /* FOMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FOMAppDelegate.h; sourceTree = "<group>"; };
 		8CEF3B2218537DCE0046C217 /* FOMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FOMAppDelegate.m; sourceTree = "<group>"; };
 		8CEF3B2518537DCE0046C217 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8CEF3B2718537DCE0046C217 /* FOMStartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FOMStartViewController.h; sourceTree = "<group>"; };
-		8CEF3B2818537DCE0046C217 /* FOMStartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FOMStartViewController.m; sourceTree = "<group>"; };
+		8CEF3B2718537DCE0046C217 /* FOMRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FOMRootViewController.h; sourceTree = "<group>"; };
+		8CEF3B2818537DCE0046C217 /* FOMRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FOMRootViewController.m; sourceTree = "<group>"; };
 		8CEF3B2A18537DCE0046C217 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8CEF3B3018537DCE0046C217 /* Food Ordering ManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Food Ordering ManagerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CEF3B3118537DCE0046C217 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		8CEF3B3918537DCE0046C217 /* Food Ordering ManagerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Food Ordering ManagerTests-Info.plist"; sourceTree = "<group>"; };
-		8CEF3B3B18537DCE0046C217 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8CEF3B3D18537DCE0046C217 /* Food_Ordering_ManagerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Food_Ordering_ManagerTests.m; sourceTree = "<group>"; };
+		8CEF3B481853812E0046C217 /* FOMOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOMOrder.h; sourceTree = "<group>"; };
+		8CEF3B491853812E0046C217 /* FOMOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOMOrder.m; sourceTree = "<group>"; };
+		8CEF3B4F185384E30046C217 /* FOMNewOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOMNewOrderViewController.h; sourceTree = "<group>"; };
+		8CEF3B50185384E30046C217 /* FOMNewOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOMNewOrderViewController.m; sourceTree = "<group>"; };
+		8CEF3B531853870F0046C217 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Main.strings; sourceTree = "<group>"; };
+		8CEF3B59185387BC0046C217 /* pl */ = {isa = PBXFileReference; lastKnownFileType = file; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,13 +117,15 @@
 		8CEF3B1818537DCE0046C217 /* Food Ordering Manager */ = {
 			isa = PBXGroup;
 			children = (
+				8CEF3B5A185388540046C217 /* Communication */,
+				8CEF3B4D185384C30046C217 /* Views */,
+				8CEF3B471853811D0046C217 /* Data */,
 				8CEF3B2118537DCE0046C217 /* FOMAppDelegate.h */,
 				8CEF3B2218537DCE0046C217 /* FOMAppDelegate.m */,
 				8CEF3B2418537DCE0046C217 /* Main.storyboard */,
-				8CEF3B2718537DCE0046C217 /* FOMStartViewController.h */,
-				8CEF3B2818537DCE0046C217 /* FOMStartViewController.m */,
 				8CEF3B2A18537DCE0046C217 /* Images.xcassets */,
 				8CEF3B1918537DCE0046C217 /* Supporting Files */,
+				8CEF3B58185387B60046C217 /* Localizable.strings */,
 			);
 			path = "Food Ordering Manager";
 			sourceTree = "<group>";
@@ -127,7 +134,6 @@
 			isa = PBXGroup;
 			children = (
 				8CEF3B1A18537DCE0046C217 /* Food Ordering Manager-Info.plist */,
-				8CEF3B1B18537DCE0046C217 /* InfoPlist.strings */,
 				8CEF3B1E18537DCE0046C217 /* main.m */,
 				8CEF3B2018537DCE0046C217 /* Food Ordering Manager-Prefix.pch */,
 			);
@@ -147,9 +153,51 @@
 			isa = PBXGroup;
 			children = (
 				8CEF3B3918537DCE0046C217 /* Food Ordering ManagerTests-Info.plist */,
-				8CEF3B3A18537DCE0046C217 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8CEF3B471853811D0046C217 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				8CEF3B481853812E0046C217 /* FOMOrder.h */,
+				8CEF3B491853812E0046C217 /* FOMOrder.m */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		8CEF3B4D185384C30046C217 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8CEF3B52185385140046C217 /* Root */,
+				8CEF3B4E185384C80046C217 /* NewOrder */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		8CEF3B4E185384C80046C217 /* NewOrder */ = {
+			isa = PBXGroup;
+			children = (
+				8CEF3B4F185384E30046C217 /* FOMNewOrderViewController.h */,
+				8CEF3B50185384E30046C217 /* FOMNewOrderViewController.m */,
+			);
+			name = NewOrder;
+			sourceTree = "<group>";
+		};
+		8CEF3B52185385140046C217 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				8CEF3B2718537DCE0046C217 /* FOMRootViewController.h */,
+				8CEF3B2818537DCE0046C217 /* FOMRootViewController.m */,
+			);
+			name = Root;
+			sourceTree = "<group>";
+		};
+		8CEF3B5A185388540046C217 /* Communication */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Communication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +260,7 @@
 			knownRegions = (
 				en,
 				Base,
+				pl,
 			);
 			mainGroup = 8CEF3B0618537DCE0046C217;
 			productRefGroup = 8CEF3B1018537DCE0046C217 /* Products */;
@@ -230,7 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CEF3B2B18537DCE0046C217 /* Images.xcassets in Resources */,
-				8CEF3B1D18537DCE0046C217 /* InfoPlist.strings in Resources */,
+				8CEF3B56185387B60046C217 /* Localizable.strings in Resources */,
 				8CEF3B2618537DCE0046C217 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -239,7 +288,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CEF3B3C18537DCE0046C217 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,9 +298,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CEF3B2918537DCE0046C217 /* FOMStartViewController.m in Sources */,
+				8CEF3B2918537DCE0046C217 /* FOMRootViewController.m in Sources */,
 				8CEF3B1F18537DCE0046C217 /* main.m in Sources */,
 				8CEF3B2318537DCE0046C217 /* FOMAppDelegate.m in Sources */,
+				8CEF3B4A1853812E0046C217 /* FOMOrder.m in Sources */,
+				8CEF3B51185384E30046C217 /* FOMNewOrderViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,28 +325,21 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		8CEF3B1B18537DCE0046C217 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8CEF3B1C18537DCE0046C217 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		8CEF3B2418537DCE0046C217 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				8CEF3B2518537DCE0046C217 /* Base */,
+				8CEF3B531853870F0046C217 /* pl */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		8CEF3B3A18537DCE0046C217 /* InfoPlist.strings */ = {
+		8CEF3B58185387B60046C217 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				8CEF3B3B18537DCE0046C217 /* en */,
+				8CEF3B59185387BC0046C217 /* pl */,
 			);
-			name = InfoPlist.strings;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
