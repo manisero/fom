@@ -4,6 +4,8 @@ namespace Domain
 {
     public class Order
     {
+        public int OrderID { get; set; }
+
         public Person Owner { get; set; }
 
         public int RestaurantID { get; set; }
@@ -18,7 +20,7 @@ namespace Domain
 
         public DateTime DeliveryDate { get; set; }
 
-        public TimeSpan IntendedDeliveryTime { get; set; }
+        public TimeSpan? IntendedDeliveryTime { get; set; }
 
         public string Status { get; set; }
     }
