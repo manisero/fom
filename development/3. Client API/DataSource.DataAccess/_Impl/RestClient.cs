@@ -27,9 +27,12 @@ namespace DataSource.DataAccess._Impl
             _settingsProvider = settingsProvider;
         }
 
-        public HttpResponseMessage Get(string resource)
+        public string Get(string resource)
         {
-            return HttpClient.GetAsync(resource).Result;
+            var response = HttpClient.GetAsync(resource).Result;
+            response.EnsureSuccessStatusCode();
+
+            return response.Content.ReadAsStringAsync().Result;
         }
     }
 }

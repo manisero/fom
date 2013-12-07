@@ -8,11 +8,11 @@ namespace DataSource.DataAccess.Tests.RestClientTests
         [Fact]
         public void should_hit_default_data_source_service()
         {
-            // Act
-            var result = new RestClient(new SettingsProvider()).Get("restaurants");
+            // Arrange
+            var restClient = new RestClient(new SettingsProvider());
 
-            // Assert
-            Assert.True(result.IsSuccessStatusCode);
+            // Act
+            Assert.DoesNotThrow(() => restClient.Get("restaurants"));
         }   
     }
 }

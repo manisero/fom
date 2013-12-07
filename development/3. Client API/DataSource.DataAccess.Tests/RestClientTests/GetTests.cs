@@ -9,14 +9,16 @@ namespace DataSource.DataAccess.Tests.RestClientTests
         [Fact]
         public void should_receive_restaurants_response()
         {
+            // Arrange
+            var restClient = new RestClient(new SettingsProvider());
+
             // Act
-            var result = new RestClient(new SettingsProvider()).Get("restaurants");
+            var result = restClient.Get("restaurants");
 
             // Assert
-            var content = result.Content.ReadAsStringAsync().Result;
-            Assert.False(string.IsNullOrWhiteSpace(content));
+            Assert.False(string.IsNullOrWhiteSpace(result));
 
-            Console.WriteLine(content);
+            Console.WriteLine(result);
         }
     }
 }

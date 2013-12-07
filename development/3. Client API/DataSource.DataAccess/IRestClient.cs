@@ -1,9 +1,7 @@
-﻿using System.Net.Http;
-
-namespace DataSource.DataAccess
+﻿namespace DataSource.DataAccess
 {
     public interface IRestClient
     {
-        HttpResponseMessage Get(string resource);
+        string Get(string resource);
     }
 }
