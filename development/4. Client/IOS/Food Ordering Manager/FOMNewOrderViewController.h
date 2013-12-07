@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FOMOrder.h"
+#import "FOMRestaurantDataDelegate.h"
 
-@interface FOMNewOrderViewController : UIViewController
+@interface FOMNewOrderViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, FOMRestaurantDataDelegate>
+
+@property (nonatomic, strong) IBOutlet UITableView *tableView;
+
+@property (nonatomic, strong) FOMOrder *order;
 
 @end

@@ -10,6 +10,18 @@
 
 @implementation FOMOrder
 
+- (id)init
+{
+    self = [super init];
+    
+    if (self != nil)
+    {
+        self.items = [[NSArray alloc] init];
+    }
+    
+    return self;
+}
+
 + (FOMOrder *)orderWithName:(NSString *)name
 {
     FOMOrder *order = [[FOMOrder alloc] init];

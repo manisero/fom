@@ -22,6 +22,13 @@
 		8CEF3B4A1853812E0046C217 /* FOMOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF3B491853812E0046C217 /* FOMOrder.m */; };
 		8CEF3B51185384E30046C217 /* FOMNewOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF3B50185384E30046C217 /* FOMNewOrderViewController.m */; };
 		8CEF3B56185387B60046C217 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CEF3B58185387B60046C217 /* Localizable.strings */; };
+		8CEF3B6018538C590046C217 /* FOMLoadingDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF3B5F18538C590046C217 /* FOMLoadingDialog.m */; };
+		8CEF3B63185397EC0046C217 /* FOMRestaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF3B62185397EC0046C217 /* FOMRestaurant.m */; };
+		8CEF3B6618539EAE0046C217 /* FOMOrderItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF3B6518539EAE0046C217 /* FOMOrderItem.m */; };
+		8CEF3B691853A3AB0046C217 /* FOMRestaurantSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF3B681853A3AB0046C217 /* FOMRestaurantSelectionViewController.m */; };
+		8CEF3B6F1853B2220046C217 /* FOMCommunicationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF3B6E1853B2210046C217 /* FOMCommunicationHandler.m */; };
+		8CEF3B721853B70E0046C217 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8CEF3B711853B70E0046C217 /* Settings.bundle */; };
+		8CEF3B751853B78D0046C217 /* FOMConfigurationProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF3B741853B78D0046C217 /* FOMConfigurationProvider.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +65,20 @@
 		8CEF3B50185384E30046C217 /* FOMNewOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOMNewOrderViewController.m; sourceTree = "<group>"; };
 		8CEF3B531853870F0046C217 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Main.strings; sourceTree = "<group>"; };
 		8CEF3B59185387BC0046C217 /* pl */ = {isa = PBXFileReference; lastKnownFileType = file; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8CEF3B5E18538C590046C217 /* FOMLoadingDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOMLoadingDialog.h; sourceTree = "<group>"; };
+		8CEF3B5F18538C590046C217 /* FOMLoadingDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOMLoadingDialog.m; sourceTree = "<group>"; };
+		8CEF3B61185397EC0046C217 /* FOMRestaurant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOMRestaurant.h; sourceTree = "<group>"; };
+		8CEF3B62185397EC0046C217 /* FOMRestaurant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOMRestaurant.m; sourceTree = "<group>"; };
+		8CEF3B6418539EAE0046C217 /* FOMOrderItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOMOrderItem.h; sourceTree = "<group>"; };
+		8CEF3B6518539EAE0046C217 /* FOMOrderItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOMOrderItem.m; sourceTree = "<group>"; };
+		8CEF3B671853A3AB0046C217 /* FOMRestaurantSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOMRestaurantSelectionViewController.h; sourceTree = "<group>"; };
+		8CEF3B681853A3AB0046C217 /* FOMRestaurantSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOMRestaurantSelectionViewController.m; sourceTree = "<group>"; };
+		8CEF3B6C1853ABA80046C217 /* FOMRestaurantDataDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FOMRestaurantDataDelegate.h; sourceTree = "<group>"; };
+		8CEF3B6D1853B2210046C217 /* FOMCommunicationHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOMCommunicationHandler.h; sourceTree = "<group>"; };
+		8CEF3B6E1853B2210046C217 /* FOMCommunicationHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOMCommunicationHandler.m; sourceTree = "<group>"; };
+		8CEF3B711853B70E0046C217 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		8CEF3B731853B78D0046C217 /* FOMConfigurationProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOMConfigurationProvider.h; sourceTree = "<group>"; };
+		8CEF3B741853B78D0046C217 /* FOMConfigurationProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOMConfigurationProvider.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +138,9 @@
 		8CEF3B1818537DCE0046C217 /* Food Ordering Manager */ = {
 			isa = PBXGroup;
 			children = (
+				8CEF3B701853B6000046C217 /* Configuration */,
+				8CEF3B6B1853AB7C0046C217 /* Delegates */,
+				8CEF3B5C18538C290046C217 /* Components */,
 				8CEF3B5A185388540046C217 /* Communication */,
 				8CEF3B4D185384C30046C217 /* Views */,
 				8CEF3B471853811D0046C217 /* Data */,
@@ -162,6 +186,10 @@
 			children = (
 				8CEF3B481853812E0046C217 /* FOMOrder.h */,
 				8CEF3B491853812E0046C217 /* FOMOrder.m */,
+				8CEF3B61185397EC0046C217 /* FOMRestaurant.h */,
+				8CEF3B62185397EC0046C217 /* FOMRestaurant.m */,
+				8CEF3B6418539EAE0046C217 /* FOMOrderItem.h */,
+				8CEF3B6518539EAE0046C217 /* FOMOrderItem.m */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -169,6 +197,7 @@
 		8CEF3B4D185384C30046C217 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8CEF3B6A1853A3AF0046C217 /* RestaurantSelection */,
 				8CEF3B52185385140046C217 /* Root */,
 				8CEF3B4E185384C80046C217 /* NewOrder */,
 			);
@@ -196,8 +225,54 @@
 		8CEF3B5A185388540046C217 /* Communication */ = {
 			isa = PBXGroup;
 			children = (
+				8CEF3B6D1853B2210046C217 /* FOMCommunicationHandler.h */,
+				8CEF3B6E1853B2210046C217 /* FOMCommunicationHandler.m */,
 			);
 			name = Communication;
+			sourceTree = "<group>";
+		};
+		8CEF3B5C18538C290046C217 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				8CEF3B5D18538C2F0046C217 /* LoadingDialog */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		8CEF3B5D18538C2F0046C217 /* LoadingDialog */ = {
+			isa = PBXGroup;
+			children = (
+				8CEF3B5E18538C590046C217 /* FOMLoadingDialog.h */,
+				8CEF3B5F18538C590046C217 /* FOMLoadingDialog.m */,
+			);
+			name = LoadingDialog;
+			sourceTree = "<group>";
+		};
+		8CEF3B6A1853A3AF0046C217 /* RestaurantSelection */ = {
+			isa = PBXGroup;
+			children = (
+				8CEF3B671853A3AB0046C217 /* FOMRestaurantSelectionViewController.h */,
+				8CEF3B681853A3AB0046C217 /* FOMRestaurantSelectionViewController.m */,
+			);
+			name = RestaurantSelection;
+			sourceTree = "<group>";
+		};
+		8CEF3B6B1853AB7C0046C217 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				8CEF3B6C1853ABA80046C217 /* FOMRestaurantDataDelegate.h */,
+			);
+			name = Delegates;
+			sourceTree = "<group>";
+		};
+		8CEF3B701853B6000046C217 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				8CEF3B711853B70E0046C217 /* Settings.bundle */,
+				8CEF3B731853B78D0046C217 /* FOMConfigurationProvider.h */,
+				8CEF3B741853B78D0046C217 /* FOMConfigurationProvider.m */,
+			);
+			name = Configuration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,6 +353,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CEF3B721853B70E0046C217 /* Settings.bundle in Resources */,
 				8CEF3B2B18537DCE0046C217 /* Images.xcassets in Resources */,
 				8CEF3B56185387B60046C217 /* Localizable.strings in Resources */,
 				8CEF3B2618537DCE0046C217 /* Main.storyboard in Resources */,
@@ -299,10 +375,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CEF3B2918537DCE0046C217 /* FOMRootViewController.m in Sources */,
+				8CEF3B691853A3AB0046C217 /* FOMRestaurantSelectionViewController.m in Sources */,
 				8CEF3B1F18537DCE0046C217 /* main.m in Sources */,
 				8CEF3B2318537DCE0046C217 /* FOMAppDelegate.m in Sources */,
+				8CEF3B6F1853B2220046C217 /* FOMCommunicationHandler.m in Sources */,
 				8CEF3B4A1853812E0046C217 /* FOMOrder.m in Sources */,
+				8CEF3B751853B78D0046C217 /* FOMConfigurationProvider.m in Sources */,
+				8CEF3B63185397EC0046C217 /* FOMRestaurant.m in Sources */,
 				8CEF3B51185384E30046C217 /* FOMNewOrderViewController.m in Sources */,
+				8CEF3B6618539EAE0046C217 /* FOMOrderItem.m in Sources */,
+				8CEF3B6018538C590046C217 /* FOMLoadingDialog.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

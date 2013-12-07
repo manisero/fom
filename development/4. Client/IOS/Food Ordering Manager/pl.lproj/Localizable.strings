@@ -9,3 +9,12 @@
 "New Order" = "Utwórz zamówienie";
 "New Order Header" = "Nowe zamówienie";
 "Existing Order Header" = "Istniejące zamówienie";
+"Loading" = "Trwa wczytywanie...";
+"Order Details" = "Szczegóły zamówienia";
+"Order Entries" = "Pozycje zamówienia";
+"Restaurant Name" = "Restauracja";
+"Order Date" = "Data zamówienia";
+"Choose" = "Wybierz";
+"No Order Entries" = "Brak zdefiniowanych pozycji";
+"Order %d" = "Zamówienie #%d";
+"Restaurant Choice" = "Wybór restauracji";

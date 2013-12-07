@@ -7,10 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FOMRestaurant.h"
 
 @interface FOMOrder : NSObject
 
 @property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) FOMRestaurant *restaurant;
+@property (nonatomic, strong) NSDate *date;
+@property (nonatomic, strong) NSArray *items;
 
 + (FOMOrder *)orderWithName:(NSString *)name;
 

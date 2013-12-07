@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 Jakub Turek. All rights reserved.
 //
 
+#import "FOMLoadingDialog.h"
 #import "FOMOrder.h"
 #import "FOMRootViewController.h"
 
@@ -18,6 +19,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.view addSubview:[[FOMLoadingDialog alloc] initWithFrame:self.view.frame]];
     [self fetchOrders];
 }
 
