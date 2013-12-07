@@ -73,6 +73,12 @@
     <Compile Include="ModelConfiguration\IEntityConfiguration.cs" />
     <Compile Include="ModelConfiguration\ModelConfigurator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\IRepository.cs" />
+    <Compile Include="Repository\IRepositoryFactory.cs" />
+    <Compile Include="Repository\IUnitOfWork.cs" />
+    <Compile Include="Repository\_Impl\EntityFrameworkRepository.cs" />
+    <Compile Include="Repository\_Impl\EntityFrameworkRepositoryFactory.cs" />
+    <Compile Include="Repository\_Impl\EntityFrameworkUnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
