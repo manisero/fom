@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IDataAccessSettingsProvider.cs" />
     <Compile Include="IDataProvider.cs" />
     <Compile Include="IRestClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

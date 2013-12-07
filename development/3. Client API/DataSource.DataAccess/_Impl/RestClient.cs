@@ -5,12 +5,31 @@ namespace DataSource.DataAccess._Impl
 {
     public class RestClient : IRestClient
     {
+        private readonly IDataAccessSettingsProvider _settingsProvider;
+
+        private HttpClient _httpClient;
+        private HttpClient HttpClient
+        {
+            get
+            {
+                if (_httpClient == null)
+                {
+                    _httpClient = new HttpClient();
+                    _httpClient.BaseAddress = new Uri(_settingsProvider.DataSourceAddress);
+                }
+
+                return _httpClient;
+            }
+        }
+
+        public RestClient(IDataAccessSettingsProvider settingsProvider)
+        {
+            _settingsProvider = settingsProvider;
+        }
+
         public HttpResponseMessage Get(string resource)
         {
-            var httpClient = new HttpClient();
-            httpClient.BaseAddress = new Uri(@"http://192.168.1.147:8080/");
-
-            return httpClient.GetAsync(resource).Result;
+            return HttpClient.GetAsync(resource).Result;
         }
     }
 }

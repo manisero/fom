@@ -53,7 +53,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RestClientTests.cs" />
+    <Compile Include="RestClientTests\ConnectivityTests.cs" />
+    <Compile Include="RestClientTests\GetTests.cs" />
+    <Compile Include="RestClientTests\SettingsProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
