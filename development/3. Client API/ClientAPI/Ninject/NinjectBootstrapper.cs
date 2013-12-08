@@ -8,6 +8,7 @@ namespace ClientAPI.Ninject
         public IKernel RegisterApplicationModules(IKernel kernel)
         {
             kernel.Load(new CoreModule(),
+                        new DataAccessModule(),
                         new ClientAPIModule(),
                         new DataSourceDataAccessModule());
 

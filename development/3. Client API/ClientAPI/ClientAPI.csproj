@@ -47,6 +47,10 @@
     <Reference Include="AutoMapper.Net4">
       <HintPath>..\packages\AutoMapper.3.1.0\lib\net40\AutoMapper.Net4.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DataAccess\bin\Debug\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
@@ -106,6 +110,7 @@
     <Compile Include="AutoMapper\Extensions\MappingExpressionExtensions.cs" />
     <Compile Include="AutoMapper\Extensions\MappingExtensions.cs" />
     <Compile Include="AutoMapper\Profiles\ClientAPIProfile.cs" />
+    <Compile Include="Contract\Order.cs" />
     <Compile Include="Contract\Restaurant.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -113,6 +118,7 @@
     <Compile Include="IClientAPIService.cs" />
     <Compile Include="Ninject\Modules\ClientAPIModule.cs" />
     <Compile Include="Ninject\Modules\CoreModule.cs" />
+    <Compile Include="Ninject\Modules\DataAccessModule.cs" />
     <Compile Include="Ninject\Modules\DataSourceDataAccessModule.cs" />
     <Compile Include="Ninject\NinjectBootstrapper.cs" />
     <Compile Include="Ninject\NinjectDependencyResolver.cs" />
@@ -137,6 +143,10 @@
       <Project>{7AF8ECEF-A2D5-4DD0-876C-1BE87E204802}</Project>
       <Name>Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{0DBF7D34-6B1E-4965-8268-92718B303AF8}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DataSource.DataAccess\DataSource.DataAccess.csproj">
       <Project>{B201DA26-40BD-45EF-9D2E-E8EE02C45FAD}</Project>
       <Name>DataSource.DataAccess</Name>
@@ -144,6 +154,10 @@
     <ProjectReference Include="..\DataSource.Domain\DataSource.Domain.csproj">
       <Project>{c748fa47-bb33-4a02-9f41-8a257ea93e40}</Project>
       <Name>DataSource.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{0fc7cfde-e1ff-4da0-82bb-b0c0283ed24c}</Project>
+      <Name>Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

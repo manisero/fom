@@ -11,6 +11,8 @@ namespace ClientAPI.AutoMapper.Profiles
                 .Map(x => x.Restaurant_ID, x => x.RestaurantID)
                 .Map(x => x.Phone_Number, x => x.PhoneNumber)
                 .Map(x => x.Email_Address, x => x.EmailAddress);
+
+            CreateMap<Domain.Order, Contract.Order>();
         }
     }
 }
