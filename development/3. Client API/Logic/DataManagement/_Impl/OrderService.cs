@@ -32,6 +32,11 @@ namespace Logic.DataManagement._Impl
             return _repositoryFactory.Create<Order>().GetWhere(x => x.Status == status);
         }
 
+        public IEnumerable<Order> GetUserOrdersByStatuses(string ownerName, params OrderStatus[] statuses)
+        {
+            return _repositoryFactory.Create<Order>().GetWhere(x => x.Owner.Name == ownerName && statuses.Contains(x.Status));
+        }
+
         public IEnumerable<Payment> SetOrder(int orderId)
         {
             var order = _repositoryFactory.Create<Order>().GetSingleOrDefault(x => x.OrderID == orderId);
