@@ -2,6 +2,7 @@
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using ClientAPI.Contract;
+using ClientAPI.Contract.Responses;
 
 namespace ClientAPI
 {
@@ -9,7 +10,11 @@ namespace ClientAPI
     public interface IClientAPIService
     {
         [OperationContract]
-        [WebGet(UriTemplate = "/restaurant")]
+        [WebGet(UriTemplate = "/restaurants")]
         List<Restaurant> GetAllRestaurants();
+
+        [OperationContract]
+        [WebInvoke(UriTemplate = "/orders", Method = "POST")]
+        CreateOrderResponse CreateOrder(Order order);
     }
 }

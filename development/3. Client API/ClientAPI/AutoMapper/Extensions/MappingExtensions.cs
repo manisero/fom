@@ -11,7 +11,7 @@ namespace ClientAPI.AutoMapper.Extensions
             return (TDestination)Mapper.Map(source, source.GetType(), typeof(TDestination));
         }
 
-        public static IEnumerable<TDestination> MapTo<TDestination>(this IEnumerable source)
+        public static IEnumerable<TDestination> MapToCollection<TDestination>(this IEnumerable source)
         {
             return (IEnumerable<TDestination>)Mapper.Map(source, source.GetType(), typeof(IEnumerable<TDestination>));
         }

@@ -5,11 +5,15 @@ namespace ClientAPI.Ninject
 {
     public class NinjectBootstrapper
     {
-        public IKernel CreateApplicationKernel()
+        public IKernel RegisterApplicationModules(IKernel kernel)
         {
-            return new StandardKernel(new CoreModule(),
-                                      new ClientAPIModule(),
-                                      new DataSourceDataAccessModule());
+            kernel.Load(new CoreModule(),
+                        new DataSourceDataAccessModule(),
+                        new DataAccessModule(),
+                        new LogicModule(),
+                        new ClientAPIModule());
+
+            return kernel;
         }
     }
 }

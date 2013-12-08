@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Core.Serialization;
 using DataSource.Domain;
+using Core.Extensions;
 
 namespace DataSource.DataAccess._Impl
 {
@@ -20,6 +21,13 @@ namespace DataSource.DataAccess._Impl
             var response = _restClient.Get("restaurants");
 
             return _jsonSerializer.Deserialize<IEnumerable<Restaurant>>(response);
+        }
+
+        public Restaurant GetRestaurant(int restaurantId)
+        {
+            var response = _restClient.Get("restaurants/{0}".FormatWith(restaurantId));
+
+            return _jsonSerializer.Deserialize<Restaurant>(response);
         }
     }
 }

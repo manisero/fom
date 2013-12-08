@@ -7,6 +7,7 @@ namespace ClientAPI.AutoMapper
     {
         public void Bootstrap()
         {
+            Mapper.AddProfile(new CoreProfile());
             Mapper.AddProfile(new ClientAPIProfile());
         }
     }
