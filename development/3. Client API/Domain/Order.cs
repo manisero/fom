@@ -7,7 +7,7 @@ namespace Domain
     {
         public int OrderID { get; set; }
 
-        public Person Owner { get; set; }
+        public virtual Person Owner { get; set; }
 
         public int RestaurantID { get; set; }
 
