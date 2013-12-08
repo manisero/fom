@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Core.Extensions
 {
@@ -7,6 +8,11 @@ namespace Core.Extensions
         public static int ToInt(this string value)
         {
             return int.Parse(value);
+        }
+
+        public static TEnum ToEnum<TEnum>(this string value)
+        {
+            return (TEnum)Enum.Parse(typeof(TEnum), value, true);
         }
 
         public static string FormatWith(this string pattern, params object[] arguments)

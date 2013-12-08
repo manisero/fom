@@ -27,6 +27,11 @@ namespace Logic.DataManagement._Impl
             return _repositoryFactory.Create<Order>().GetAll();
         }
 
+        public IEnumerable<Order> GetOrdersByStatus(OrderStatus status)
+        {
+            return _repositoryFactory.Create<Order>().GetWhere(x => x.Status == status);
+        }
+
         public Order CreateOrder(string ownerName, int restaurantId, OrderInfo orderInfo)
         {
             var owner = _repositoryFactory.Create<Person>().GetSingleOrDefault(x => x.Name == ownerName);
