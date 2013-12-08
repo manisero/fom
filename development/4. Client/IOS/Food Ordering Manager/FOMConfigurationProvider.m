@@ -21,6 +21,11 @@
     return [[self defaultSettings] valueForKey:@"serviceAddress"];
 }
 
++ (NSString *)defaultUserEmailAddress
+{
+    return [[self defaultSettings] valueForKey:@"userEmailAddress"];
+}
+
 + (NSString *)restaurantsServiceAddress
 {
     NSString *serviceAddress = [[NSUserDefaults standardUserDefaults] valueForKey:@"serviceAddress"];
@@ -55,6 +60,14 @@
     serviceAddress = [NSString stringWithFormat:@"%@%@%@%@", serviceAddress, @"api/orders/", orderId, @"/items"];
     
     return serviceAddress;
+}
+
++ (NSString *)userEmailAddress
+{
+    NSString *userEmailAddress = [[NSUserDefaults standardUserDefaults] valueForKey:@"userEmailAddress"];
+    userEmailAddress = userEmailAddress != nil ? userEmailAddress : [self defaultUserEmailAddress];
+    
+    return userEmailAddress;
 }
 
 @end

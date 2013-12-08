@@ -13,7 +13,7 @@
 #import "FOMOrderDateDataDelegate.h"
 #import "FOMRestaurantDataDelegate.h"
 
-@interface FOMNewOrderViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, FOMRestaurantDataDelegate, FOMOrderDateDataDelegate, FOMCommunicationHandlerDelegate>
+@interface FOMNewOrderViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, FOMRestaurantDataDelegate, FOMOrderDateDataDelegate, FOMCommunicationHandlerDelegate, UIAlertViewDelegate>
 
 @property (nonatomic, strong) FOMLoadingDialog *creatingOrderDialog;
 @property (nonatomic, strong) IBOutlet UITableView *tableView;

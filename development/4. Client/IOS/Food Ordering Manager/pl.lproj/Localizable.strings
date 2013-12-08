@@ -29,3 +29,6 @@
 "OK" = "OK";
 "Error" = "Błąd!";
 "Ordering Failed" = "Nie udało się złożyć zamówienia";
+"Order Creation Success Header" = "Utworzono zamówienie";
+"Order Creation Success" = "Pomyślnie utworzono nowe zamówienie";
+"Order Creation Failure" = "Nie udało się utworzyć nowego zamówienia";

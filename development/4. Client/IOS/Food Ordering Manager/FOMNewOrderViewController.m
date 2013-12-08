@@ -175,7 +175,7 @@
 {
     [self hideCreatingOrderDialog];
     [self storeOrderIdFromResponse:sentData];
-    [self performSegueWithIdentifier:@"SelectOrderItems" sender:self];
+    [self showSuccessDialog];
 }
 
 - (void)storeOrderIdFromResponse:(NSData *)response
@@ -190,9 +190,42 @@
     [self.creatingOrderDialog removeFromSuperview];
 }
 
+- (void)showSuccessDialog
+{
+    UIAlertView *alertView = [[UIAlertView alloc]
+                              initWithTitle:NSLocalizedString(@"Order Creation Success Header", nil)
+                              message:NSLocalizedString(@"Order Creation Success", nil)
+                              delegate:self
+                              cancelButtonTitle:NSLocalizedString(@"OK", nil)
+                              otherButtonTitles:nil];
+    
+    [alertView show];
+}
+
 - (void)communicationFailedWithError:(NSError *)error
 {
     [self hideCreatingOrderDialog];
+    [self showFailureDialog];
+}
+
+- (void)showFailureDialog
+{
+    UIAlertView *alertView = [[UIAlertView alloc]
+                              initWithTitle:NSLocalizedString(@"Error", nil)
+                              message:NSLocalizedString(@"Order Creation Failure", nil)
+                              delegate:self
+                              cancelButtonTitle:NSLocalizedString(@"OK", nil)
+                              otherButtonTitles:nil];
+    
+    [alertView show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if ([alertView.title isEqualToString:NSLocalizedString(@"Order Creation Success Header", nil)])
+    {
+        [self performSegueWithIdentifier:@"SelectOrderItems" sender:self];
+    }
 }
 
 @end
