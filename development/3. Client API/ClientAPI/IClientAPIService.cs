@@ -23,6 +23,6 @@ namespace ClientAPI
 
         [OperationContract]
         [WebInvoke(UriTemplate = "/orders/{orderId}/items", Method = "PUT")]
-        void CreateOrderItems(string orderId, IEnumerable<OrderItem> orderItem);
+        void CreateOrderItems(string orderId, IEnumerable<OrderItem> orderItems);
     }
 }

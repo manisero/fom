@@ -13,10 +13,15 @@ namespace ClientAPI.AutoMapper.Profiles
                 .Map(x => x.Phone_Number, x => x.PhoneNumber)
                 .Map(x => x.Email_Address, x => x.EmailAddress);
 
-            CreateMap<DataSource.Domain.Dish, Contract.Dish>();
+            CreateMap<DataSource.Domain.Dish, Contract.Dish>()
+                .Map(x => x.Dish_ID, x => x.DishID);
 
             // Contract -> Domain
             CreateMap<Contract.Order, Domain.Order>();
+
+            // Contrat -> Logic
+            CreateMap<Contract.Order, Logic.DataManagement.Model.OrderInfo>();
+            CreateMap<Contract.OrderItem, Logic.DataManagement.Model.OrderItemInfo>();
         }
     }
 }

@@ -6,6 +6,9 @@ namespace ClientAPI.Contract
     public class Dish
     {
         [DataMember]
+        public int DishID { get; set; }
+
+        [DataMember]
         public string Name { get; set; }
 
         [DataMember]

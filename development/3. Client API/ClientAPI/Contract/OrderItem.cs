@@ -6,13 +6,10 @@ namespace ClientAPI.Contract
     public class OrderItem
     {
         [DataMember]
-        public string DishName { get; set; }
+        public int DishID { get; set; }
 
         [DataMember]
-        public decimal DishPrice { get; set; }
-
-        [DataMember]
-        public int Quantity { get; set; }
+        public int? Quantity { get; set; }
 
         [DataMember]
         public string Remarks { get; set; }

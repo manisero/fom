@@ -69,6 +69,10 @@
     <Compile Include="Migrations\201312081424479_OrderItem_Remarks_and_Accepted_columns.Designer.cs">
       <DependentUpon>201312081424479_OrderItem_Remarks_and_Accepted_columns.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201312081445558_Order_OrderItems_association.cs" />
+    <Compile Include="Migrations\201312081445558_Order_OrderItems_association.Designer.cs">
+      <DependentUpon>201312081445558_Order_OrderItems_association.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelConfiguration\Configurations\OrderConfiguration.cs" />
     <Compile Include="ModelConfiguration\Configurations\OrderItemConfiguration.cs" />
@@ -113,6 +117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201312081424479_OrderItem_Remarks_and_Accepted_columns.resx">
       <DependentUpon>201312081424479_OrderItem_Remarks_and_Accepted_columns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201312081445558_Order_OrderItems_association.resx">
+      <DependentUpon>201312081445558_Order_OrderItems_association.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

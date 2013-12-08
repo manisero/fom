@@ -6,7 +6,7 @@
 
         public Order Order { get; set; }
 
-        public Person Person { get; set; }
+        public Person Owner { get; set; }
 
         public string DishName { get; set; }
 

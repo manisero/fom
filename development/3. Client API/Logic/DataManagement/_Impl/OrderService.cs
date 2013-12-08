@@ -1,9 +1,11 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Core.Extensions;
 using DataAccess.Repository;
 using DataSource.DataAccess;
 using Domain;
+using Logic.DataManagement.Model;
 
 namespace Logic.DataManagement._Impl
 {
@@ -20,7 +22,7 @@ namespace Logic.DataManagement._Impl
             _dataProvider = dataProvider;
         }
 
-        public Order CreateOrder(int restaurantId, DateTime? deliveryDate, TimeSpan? intendedDeliveryTime)
+        public Order CreateOrder(int restaurantId, OrderInfo orderInfo)
         {
             // TODO: Retrieve order owner
             var owner = _repositoryFactory.Create<Person>().GetAll().FirstOrDefault();
@@ -45,14 +47,55 @@ namespace Logic.DataManagement._Impl
                     RestaurantAddress = restaurant.Address,
                     RestaurantPhoneNumber = restaurant.Phone_Number,
                     RestaurantEmailAddress = restaurant.Email_Address,
-                    DeliveryDate = deliveryDate ?? DateTime.UtcNow,
-                    IntendedDeliveryTime = intendedDeliveryTime
+                    DeliveryDate = orderInfo.DeliveryDate ?? DateTime.UtcNow,
+                    IntendedDeliveryTime = orderInfo.IntendedDeliveryTime
                 };
 
             _repositoryFactory.Create<Order>().Add(order);
             _unitOfWork.SaveChanges();
 
             return order;
+        }
+
+        public void CreateOrderItems(int orderId, IEnumerable<OrderItemInfo> orderItemInfos)
+        {
+            // TODO: Retrieve order owner
+            var owner = _repositoryFactory.Create<Person>().GetAll().FirstOrDefault();
+
+            if (owner == null)
+            {
+                throw new InvalidOperationException("Could not find Order owner");
+            }
+
+            var order = _repositoryFactory.Create<Order>().GetSingleOrDefault(x => x.OrderID == orderId);
+
+            if (order == null)
+            {
+                throw new InvalidOperationException("Order of ID '{0}' does not exist".FormatWith(orderId));
+            }
+
+            var restaurant = _dataProvider.GetRestaurant(order.RestaurantID);
+
+            foreach (var item in orderItemInfos)
+            {
+                var dish = restaurant.Dishes.SingleOrDefault(x => x.Dish_ID == item.DishID);
+
+                if (dish == null)
+                {
+                    throw new InvalidOperationException("Dish of ID '{0}' does not exist".FormatWith(orderId));
+                }
+
+                order.OrderItems.Add(new OrderItem
+                    {
+                        Owner = owner,
+                        DishName = dish.Name,
+                        DishPrice = dish.Price,
+                        Quantity = item.Quantity ?? 1,
+                        Remarks = item.Remarks
+                    });
+            }
+
+            _unitOfWork.SaveChanges();
         }
     }
 }

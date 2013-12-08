@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Domain
 {
@@ -23,5 +24,7 @@ namespace Domain
         public TimeSpan? IntendedDeliveryTime { get; set; }
 
         public string Status { get; set; }
+
+        public virtual IList<OrderItem> OrderItems { get; set; }
     }
 }

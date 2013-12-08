@@ -8,6 +8,8 @@ using DataSource.DataAccess;
 using ClientAPI.AutoMapper.Extensions;
 using System.Linq;
 using Logic.DataManagement;
+using Logic.DataManagement.Model;
+using Core.Extensions;
 
 namespace ClientAPI
 {
@@ -31,23 +33,21 @@ namespace ClientAPI
 
         public List<Dish> GetRestaurantDishes(string restaurantId)
         {
-            var restaurant = _dataProvider.GetRestaurant(int.Parse(restaurantId));
+            var restaurant = _dataProvider.GetRestaurant(restaurantId.ToInt());
 
             return restaurant.Dishes.MapToCollection<Dish>().ToList();
         }
 
         public CreateOrderResponse CreateOrder(Order order)
         {
-            var newOrder = _orderService.CreateOrder(order.RestaurantID,
-                                                     order.DeliveryDate.MapTo<DateTime?>(),
-                                                     order.IntendedDeliveryTime.MapTo<TimeSpan?>());
+            var newOrder = _orderService.CreateOrder(order.RestaurantID, order.MapTo<OrderInfo>());
 
             return new CreateOrderResponse { OrderID = newOrder.OrderID };
         }
 
-        public void CreateOrderItems(string orderId, IEnumerable<OrderItem> orderItem)
+        public void CreateOrderItems(string orderId, IEnumerable<OrderItem> orderItems)
         {
-            throw new NotImplementedException();
+            _orderService.CreateOrderItems(orderId.ToInt(), orderItems.MapToCollection<OrderItemInfo>());
         }
     }
 }
