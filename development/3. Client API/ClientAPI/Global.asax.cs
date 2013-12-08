@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Data.Entity;
 using System.ServiceModel.Activation;
 using System.Web;
 using System.Web.Routing;
 using ClientAPI.AutoMapper;
+using DataAccess;
 using Ninject.Extensions.Wcf;
 
 namespace ClientAPI
@@ -11,6 +13,7 @@ namespace ClientAPI
     {
         protected void Application_Start(object sender, EventArgs e)
         {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<DataContext, DataAccess.Migrations.Configuration>());
             new AutoMapperBootstrapper().Bootstrap();
 
             RouteTable.Routes.Add(new ServiceRoute("api", new NinjectWebServiceHostFactory(), typeof(ClientAPIService)));
