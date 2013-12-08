@@ -30,6 +30,10 @@ namespace ClientAPI
         List<Payment> SetOrder(string orderId);
 
         [OperationContract]
+        [WebGet(UriTemplate = "users/{userName}/orders")]
+        List<Order> GetUserActiveOrders(string userName);
+
+        [OperationContract]
         [WebInvoke(UriTemplate = "users/{userName}/orders", Method = "POST")]
         CreateOrderResponse CreateUserOrder(string userName, Order order);
 

@@ -10,6 +10,8 @@ namespace Logic.DataManagement
 
         IEnumerable<Order> GetOrdersByStatus(OrderStatus status);
 
+        IEnumerable<Order> GetUserOrdersByStatuses(string ownerName, params OrderStatus[] statuses);
+
         IEnumerable<Payment> SetOrder(int orderId);
             
         Order CreateOrder(string ownerName, int restaurantId, OrderInfo orderInfo);

@@ -52,7 +52,12 @@ namespace ClientAPI
         {
             return _orderService.SetOrder(orderId.ToInt()).MapToCollection<Contract.Payment>().ToList();
         }
-        
+
+        public List<Contract.Order> GetUserActiveOrders(string userName)
+        {
+            return _orderService.GetUserOrdersByStatuses(userName, OrderStatus.Open, OrderStatus.Set).MapToCollection<Contract.Order>().ToList();
+        }
+
         public CreateOrderResponse CreateUserOrder(string userName, Contract.Order order)
         {
             var newOrder = _orderService.CreateOrder(userName, order.RestaurantID, order.MapTo<OrderInfo>());
