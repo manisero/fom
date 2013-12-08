@@ -4,10 +4,10 @@ using System.ServiceModel;
 using System.ServiceModel.Activation;
 using ClientAPI.Contract;
 using ClientAPI.Contract.Responses;
-using DataAccess.Repository;
 using DataSource.DataAccess;
 using ClientAPI.AutoMapper.Extensions;
 using System.Linq;
+using Logic.DataManagement;
 
 namespace ClientAPI
 {
@@ -16,38 +16,26 @@ namespace ClientAPI
     public class ClientAPIService : IClientAPIService
     {
         private readonly IDataProvider _dataProvider;
-        private readonly IRepositoryFactory _repositoryFactory;
-        private readonly IUnitOfWork _unitOfWork;
+        private readonly IOrderService _orderService;
 
-        public ClientAPIService(IDataProvider dataProvider, IRepositoryFactory repositoryFactory, IUnitOfWork unitOfWork)
+        public ClientAPIService(IDataProvider dataProvider, IOrderService orderService)
         {
             _dataProvider = dataProvider;
-            _repositoryFactory = repositoryFactory;
-            _unitOfWork = unitOfWork;
+            _orderService = orderService;
         }
 
         public List<Restaurant> GetAllRestaurants()
         {
-            return _dataProvider.GetRestaurants().MapTo<Restaurant>().ToList();
+            return _dataProvider.GetRestaurants().MapToCollection<Restaurant>().ToList();
         }
 
         public CreateOrderResponse CreateOrder(Order order)
         {
-            var domainOrder = order.MapTo<Domain.Order>();
+            var newOrder = _orderService.CreateOrder(order.RestaurantID,
+                                                     order.DeliveryDate.MapTo<DateTime?>(),
+                                                     order.IntendedDeliveryTime.MapTo<TimeSpan?>());
 
-            // TODO: Get owner from request
-            var owner = _repositoryFactory.Create<Domain.Person>().GetAll().First();
-            domainOrder.Owner = owner;
-
-            if (order.DeliveryDate == null)
-            {
-                domainOrder.DeliveryDate = DateTime.UtcNow.Date;
-            }
-
-            _repositoryFactory.Create<Domain.Order>().Add(domainOrder);
-            _unitOfWork.SaveChanges();
-
-            return new CreateOrderResponse { OrderID = domainOrder.OrderID };
+            return new CreateOrderResponse { OrderID = newOrder.OrderID };
         }
     }
 }

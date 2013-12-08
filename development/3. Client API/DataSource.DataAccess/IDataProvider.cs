@@ -6,5 +6,7 @@ namespace DataSource.DataAccess
     public interface IDataProvider
     {
         IEnumerable<Restaurant> GetRestaurants();
+
+        Restaurant GetRestaurant(int restaurantId);
     }
 }

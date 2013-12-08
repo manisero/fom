@@ -129,6 +129,7 @@
     <Compile Include="Ninject\Modules\CoreModule.cs" />
     <Compile Include="Ninject\Modules\DataAccessModule.cs" />
     <Compile Include="Ninject\Modules\DataSourceDataAccessModule.cs" />
+    <Compile Include="Ninject\Modules\LogicModule.cs" />
     <Compile Include="Ninject\NinjectBootstrapper.cs" />
     <Compile Include="Ninject\NinjectDependencyResolver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -167,6 +168,10 @@
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{0fc7cfde-e1ff-4da0-82bb-b0c0283ed24c}</Project>
       <Name>Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logic\Logic.csproj">
+      <Project>{42B1E436-F148-4B03-B343-C59F25F1081C}</Project>
+      <Name>Logic</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
