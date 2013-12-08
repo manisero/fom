@@ -85,6 +85,14 @@
     <Compile Include="Migrations\201312081836158_Foreign_keys_NOT_NULL_fix.Designer.cs">
       <DependentUpon>201312081836158_Foreign_keys_NOT_NULL_fix.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201312081856141_Foreign_keys_NOT_NULL_fix_part2.cs" />
+    <Compile Include="Migrations\201312081856141_Foreign_keys_NOT_NULL_fix_part2.Designer.cs">
+      <DependentUpon>201312081856141_Foreign_keys_NOT_NULL_fix_part2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201312081900159_Foreign_keys_NOT_NULL_fix_part3.cs" />
+    <Compile Include="Migrations\201312081900159_Foreign_keys_NOT_NULL_fix_part3.Designer.cs">
+      <DependentUpon>201312081900159_Foreign_keys_NOT_NULL_fix_part3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelConfiguration\Configurations\OrderConfiguration.cs" />
     <Compile Include="ModelConfiguration\Configurations\OrderItemConfiguration.cs" />
@@ -142,6 +150,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201312081836158_Foreign_keys_NOT_NULL_fix.resx">
       <DependentUpon>201312081836158_Foreign_keys_NOT_NULL_fix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201312081856141_Foreign_keys_NOT_NULL_fix_part2.resx">
+      <DependentUpon>201312081856141_Foreign_keys_NOT_NULL_fix_part2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201312081900159_Foreign_keys_NOT_NULL_fix_part3.resx">
+      <DependentUpon>201312081900159_Foreign_keys_NOT_NULL_fix_part3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

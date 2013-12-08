@@ -26,5 +26,7 @@ namespace Domain
         public OrderStatus Status { get; set; }
 
         public virtual IList<OrderItem> OrderItems { get; set; }
+
+        public virtual IList<Payment> Payments { get; set; }
     }
 }

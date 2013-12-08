@@ -7,8 +7,8 @@ namespace DataAccess.ModelConfiguration.Configurations
     {
         protected override void ConfigureEntity(EntityTypeConfiguration<Payment> entity)
         {
-            entity.HasRequired(x => x.Person);
-            //entity.HasRequired(x => x.Order);
+            entity.HasRequired(x => x.Person).WithMany(x => x.Payments).HasForeignKey(x => x.PersonID).WillCascadeOnDelete(false);
+            entity.HasRequired(x => x.Order).WithMany(x => x.Payments).HasForeignKey(x => x.OrderID);
         }
     }
 }
