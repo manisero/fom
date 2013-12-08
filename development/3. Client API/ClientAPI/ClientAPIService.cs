@@ -38,6 +38,11 @@ namespace ClientAPI
             return restaurant.Dishes.MapToCollection<Dish>().ToList();
         }
 
+        public List<Order> GetAllOrders()
+        {
+            return _orderService.GetOrders().MapToCollection<Order>().ToList();
+        }
+
         public CreateOrderResponse CreateOrder(Order order)
         {
             var newOrder = _orderService.CreateOrder(order.RestaurantID, order.MapTo<OrderInfo>());

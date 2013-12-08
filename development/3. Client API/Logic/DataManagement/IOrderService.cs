@@ -6,6 +6,8 @@ namespace Logic.DataManagement
 {
     public interface IOrderService
     {
+        IEnumerable<Order> GetOrders();
+            
         Order CreateOrder(int restaurantId, OrderInfo orderInfo);
 
         void CreateOrderItems(int orderId, IEnumerable<OrderItemInfo> orderItemInfos);
