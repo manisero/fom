@@ -48,14 +48,14 @@ namespace ClientAPI
             return _orderService.GetOrdersByStatus(status.ToEnum<OrderStatus>()).MapToCollection<Contract.Order>().ToList();
         }
 
-        public List<Contract.Payment> SetOrder(string orderId)
+        public List<Contract.Payment> SettleOrder(string orderId)
         {
-            return _orderService.SetOrder(orderId.ToInt()).MapToCollection<Contract.Payment>().ToList();
+            return _orderService.SettleOrder(orderId.ToInt()).MapToCollection<Contract.Payment>().ToList();
         }
 
         public List<Contract.Order> GetUserActiveOrders(string userName)
         {
-            return _orderService.GetUserOrdersByStatuses(userName, OrderStatus.Open, OrderStatus.Set).MapToCollection<Contract.Order>().ToList();
+            return _orderService.GetUserOrdersByStatuses(userName, OrderStatus.Open, OrderStatus.Settled).MapToCollection<Contract.Order>().ToList();
         }
 
         public CreateOrderResponse CreateUserOrder(string userName, Contract.Order order)

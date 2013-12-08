@@ -37,7 +37,7 @@ namespace Logic.DataManagement._Impl
             return _repositoryFactory.Create<Order>().GetWhere(x => x.Owner.Name == ownerName && statuses.Contains(x.Status));
         }
 
-        public IEnumerable<Payment> SetOrder(int orderId)
+        public IEnumerable<Payment> SettleOrder(int orderId)
         {
             var order = _repositoryFactory.Create<Order>().GetSingleOrDefault(x => x.OrderID == orderId);
 
@@ -46,11 +46,10 @@ namespace Logic.DataManagement._Impl
                 throw new InvalidOperationException("Order of ID '{0}' does not exist".FormatWith(orderId));
             }
 
-            order.Status = OrderStatus.Set;
+            order.Status = OrderStatus.Settled;
             _unitOfWork.SaveChanges();
 
-            return order.OrderItems.Where(x => x.Owner != order.Owner)
-                        .GroupBy(x => x.Owner)
+            return order.OrderItems.GroupBy(x => x.Owner)
                         .Select(x => new Payment
                             {
                                 Person = x.Key,

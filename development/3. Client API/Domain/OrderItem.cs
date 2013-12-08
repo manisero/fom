@@ -4,7 +4,11 @@
     {
         public int OrderItemID { get; set; }
 
+        public int OrderID { get; set; }
+
         public virtual Order Order { get; set; }
+
+        public int OwnerID { get; set; }
 
         public virtual Person Owner { get; set; }
 
