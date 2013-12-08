@@ -112,9 +112,12 @@
   <ItemGroup>
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="AutoMapper\AutoMapperBootstrapper.cs" />
+    <Compile Include="AutoMapper\Converters\StringToDateTimeConverter.cs" />
+    <Compile Include="AutoMapper\Converters\StringToTimeSpanConverter.cs" />
     <Compile Include="AutoMapper\Extensions\MappingExpressionExtensions.cs" />
     <Compile Include="AutoMapper\Extensions\MappingExtensions.cs" />
     <Compile Include="AutoMapper\Profiles\ClientAPIProfile.cs" />
+    <Compile Include="AutoMapper\Profiles\CoreProfile.cs" />
     <Compile Include="Contract\Order.cs" />
     <Compile Include="Contract\Restaurant.cs" />
     <Compile Include="Global.asax.cs">
