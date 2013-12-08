@@ -55,12 +55,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Nowe zamówienie" id="76K-2B-HP2">
-                        <barButtonItem key="rightBarButtonItem" title="Utwórz" id="zhB-T4-8Uy"/>
+                        <barButtonItem key="rightBarButtonItem" title="Utwórz" id="zhB-T4-8Uy">
+                            <connections>
+                                <action selector="createButtonPressed:" destination="YWR-ma-JVT" id="6dB-zC-wOo"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="2gi-BN-jI4" id="2ig-Qm-JfK"/>
                         <segue destination="aJa-2t-ZGg" kind="push" identifier="SelectRestaurant" id="boV-ud-uyH"/>
                         <segue destination="tQu-Tj-hXU" kind="push" identifier="SelectDate" id="wKx-ld-0MK"/>
+                        <segue destination="FvF-SE-0Bf" kind="push" identifier="SelectOrderItems" id="QkM-77-yR4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rRy-cK-xpE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -180,6 +185,32 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dqb-Xu-MDK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1742" y="71"/>
+        </scene>
+        <!--Order Items Selection View Controller - Pozycje zamówienia-->
+        <scene sceneID="eBI-Up-63y">
+            <objects>
+                <viewController id="FvF-SE-0Bf" customClass="FOMOrderItemsSelectionViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Eyc-nU-WUS"/>
+                        <viewControllerLayoutGuide type="bottom" id="Nfb-E0-dnw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Fgl-08-TeH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="6iu-WK-cbw">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Pozycje zamówienia" id="m3U-Fo-kM0"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DbA-WO-1db" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2153" y="71"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="c1q-Je-JlZ">

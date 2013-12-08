@@ -11,5 +11,6 @@
 @interface FOMResponseParser : NSObject
 
 + (NSArray *)parseRestaurantsFromResponse:(NSData *)response;
++ (NSNumber *)parseOrderIdFromResponse:(NSData *)response;
 
 @end

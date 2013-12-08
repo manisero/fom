@@ -6,9 +6,14 @@
 //  Copyright (c) 2013 Jakub Turek. All rights reserved.
 //
 
+#import "FOMCommunicationHandler.h"
+#import "FOMConfigurationProvider.h"
 #import "FOMDateSelectionViewController.h"
 #import "FOMNewOrderViewController.h"
-#import "FOMOrderItem.h"
+#import "FOMOrder.h"
+#import "FOMOrderItemsSelectionViewController.h"
+#import "FOMRequestCompiler.h"
+#import "FOMResponseParser.h"
 #import "FOMRestaurantSelectionViewController.h"
 
 @interface FOMNewOrderViewController ()
@@ -125,6 +130,11 @@
         FOMDateSelectionViewController *destinationViewController = segue.destinationViewController;
         destinationViewController.delegate = self;
     }
+    else if ([segue.identifier isEqualToString:@"SelectOrderItems"])
+    {
+        FOMOrderItemsSelectionViewController *destinationViewController = segue.destinationViewController;
+        destinationViewController.orderId = self.order.orderId;
+    }
 }
 
 - (void)restaurantHasChanged:(FOMRestaurant *)restaurant
@@ -135,6 +145,54 @@
 - (void)orderDateHasChanged:(NSDate *)date
 {
     self.order.date = date;
+}
+
+- (IBAction)createButtonPressed:(id)sender
+{
+    [self showCreatingOrderDialog];
+    [self invokeRemoteOrderCreation];
+}
+
+- (void)showCreatingOrderDialog
+{
+    self.creatingOrderDialog = [[FOMLoadingDialog alloc] initWithFrame:self.view.frame];
+    self.creatingOrderDialog.loadingLabel.text = NSLocalizedString(@"Creating Order", nil);
+    
+    [self.view addSubview:self.creatingOrderDialog];
+    [self.creatingOrderDialog startAnimating];
+}
+
+- (void)invokeRemoteOrderCreation
+{
+    NSData *dataToSend = [FOMRequestCompiler createRequestBodyForOrder:self.order];
+    
+    FOMCommunicationHandler *communicationHandler = [[FOMCommunicationHandler alloc] init];
+    communicationHandler.delegate = self;
+    [communicationHandler startPostConnectionWithAddress:[FOMConfigurationProvider ordersServiceAddress] andBody:dataToSend];
+}
+
+- (void)communicationFinishedSuccessfully:(NSData *)sentData
+{
+    [self hideCreatingOrderDialog];
+    [self storeOrderIdFromResponse:sentData];
+    [self performSegueWithIdentifier:@"SelectOrderItems" sender:self];
+}
+
+- (void)storeOrderIdFromResponse:(NSData *)response
+{
+    NSNumber *orderId = [FOMResponseParser parseOrderIdFromResponse:response];
+    self.order.orderId = orderId;
+}
+
+- (void)hideCreatingOrderDialog
+{
+    [self.creatingOrderDialog stopAnimating];
+    [self.creatingOrderDialog removeFromSuperview];
+}
+
+- (void)communicationFailedWithError:(NSError *)error
+{
+    [self hideCreatingOrderDialog];
 }
 
 @end

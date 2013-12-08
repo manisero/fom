@@ -11,5 +11,6 @@
 @interface FOMConfigurationProvider : NSObject
 
 + (NSString *)restaurantsServiceAddress;
++ (NSString *)ordersServiceAddress;
 
 @end

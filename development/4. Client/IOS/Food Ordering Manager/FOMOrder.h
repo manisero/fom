@@ -15,6 +15,7 @@
 @property (nonatomic, strong) FOMRestaurant *restaurant;
 @property (nonatomic, strong) NSDate *date;
 @property (nonatomic, strong) NSArray *items;
+@property (nonatomic, strong) NSNumber *orderId;
 
 + (FOMOrder *)orderWithName:(NSString *)name;
 

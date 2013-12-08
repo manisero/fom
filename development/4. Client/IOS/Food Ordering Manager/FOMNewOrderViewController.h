@@ -7,14 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FOMCommunicationHandlerDelegate.h"
+#import "FOMLoadingDialog.h"
 #import "FOMOrder.h"
 #import "FOMOrderDateDataDelegate.h"
 #import "FOMRestaurantDataDelegate.h"
 
-@interface FOMNewOrderViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, FOMRestaurantDataDelegate, FOMOrderDateDataDelegate>
+@interface FOMNewOrderViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, FOMRestaurantDataDelegate, FOMOrderDateDataDelegate, FOMCommunicationHandlerDelegate>
 
+@property (nonatomic, strong) FOMLoadingDialog *creatingOrderDialog;
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
 
 @property (nonatomic, strong) FOMOrder *order;
+
+- (IBAction)createButtonPressed:(id)sender;
 
 @end

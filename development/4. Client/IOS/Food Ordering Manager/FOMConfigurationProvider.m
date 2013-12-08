@@ -30,4 +30,13 @@
     return serviceAddress;
 }
 
++ (NSString *)ordersServiceAddress
+{
+    NSString *serviceAddress = [[NSUserDefaults standardUserDefaults] valueForKey:@"serviceAddress"];
+    serviceAddress = serviceAddress != nil ? serviceAddress : [self defaultServiceAddress];
+    serviceAddress = [NSString stringWithFormat:@"%@%@", serviceAddress, @"api/orders"];
+    
+    return serviceAddress;
+}
+
 @end

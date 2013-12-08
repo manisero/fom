@@ -11,8 +11,6 @@
 
 @implementation FOMResponseParser
 
-
-
 + (NSArray *)parseRestaurantsFromResponse:(NSData *)response
 {
     NSMutableArray *restaurants = [[NSMutableArray alloc] init];
@@ -41,6 +39,12 @@
     }
     
     return parsedResponse;
+}
+
++ (NSNumber *)parseOrderIdFromResponse:(NSData *)response
+{
+    NSDictionary *jsonResponse = [self dictionaryFromResponse:response];
+    return [jsonResponse valueForKey:@"OrderID"];
 }
 
 @end

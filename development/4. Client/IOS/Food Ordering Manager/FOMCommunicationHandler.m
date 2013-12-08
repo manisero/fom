@@ -22,11 +22,27 @@
     return self;
 }
 
-- (void)startConnection:(NSString *)address
+- (void)startGetConnectionWithAddress:(NSString *)address
+{
+    [self startConnectionWithAddress:address andMethod:@"GET" andBody:nil];
+}
+
+- (void)startPostConnectionWithAddress:(NSString *)address andBody:(NSData *)body
+{
+    [self startConnectionWithAddress:address andMethod:@"POST" andBody:body];
+}
+
+- (void)startConnectionWithAddress:(NSString *)address andMethod:(NSString *)method andBody:(NSData *)body
 {
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:address]];
-    [request setHTTPMethod:@"GET"];
+    [request setHTTPMethod:method];
     [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+    if (body != nil)
+    {
+        [request setHTTPBody:body];
+    }
     
     self.connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
 }
@@ -45,6 +61,7 @@
 {
     if (self.delegate != nil)
     {
+        NSLog(@"response: %@", [[NSString alloc] initWithData:self.data encoding:NSUTF8StringEncoding]);
         [self.delegate communicationFinishedSuccessfully:self.data];
     }
 }

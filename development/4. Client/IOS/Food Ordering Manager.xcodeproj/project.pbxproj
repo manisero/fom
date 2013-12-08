@@ -10,6 +10,8 @@
 		8CBC02A6185483530088BB72 /* DefaultConfiguration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8CBC02A5185483530088BB72 /* DefaultConfiguration.plist */; };
 		8CBC02AC185488670088BB72 /* FOMResponseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CBC02AB185488670088BB72 /* FOMResponseParser.m */; };
 		8CBC02B01854944F0088BB72 /* FOMDateSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CBC02AF1854944F0088BB72 /* FOMDateSelectionViewController.m */; };
+		8CBC02B51854A5320088BB72 /* FOMRequestCompiler.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CBC02B41854A5320088BB72 /* FOMRequestCompiler.m */; };
+		8CBC02B91854A9AF0088BB72 /* FOMOrderItemsSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CBC02B81854A9AF0088BB72 /* FOMOrderItemsSelectionViewController.m */; };
 		8CEF3B1318537DCE0046C217 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEF3B1218537DCE0046C217 /* Foundation.framework */; };
 		8CEF3B1518537DCE0046C217 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEF3B1418537DCE0046C217 /* CoreGraphics.framework */; };
 		8CEF3B1718537DCE0046C217 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEF3B1618537DCE0046C217 /* UIKit.framework */; };
@@ -52,6 +54,10 @@
 		8CBC02AE1854944F0088BB72 /* FOMDateSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOMDateSelectionViewController.h; sourceTree = "<group>"; };
 		8CBC02AF1854944F0088BB72 /* FOMDateSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOMDateSelectionViewController.m; sourceTree = "<group>"; };
 		8CBC02B1185498FD0088BB72 /* FOMOrderDateDataDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FOMOrderDateDataDelegate.h; sourceTree = "<group>"; };
+		8CBC02B31854A5320088BB72 /* FOMRequestCompiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOMRequestCompiler.h; sourceTree = "<group>"; };
+		8CBC02B41854A5320088BB72 /* FOMRequestCompiler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOMRequestCompiler.m; sourceTree = "<group>"; };
+		8CBC02B71854A9AF0088BB72 /* FOMOrderItemsSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOMOrderItemsSelectionViewController.h; sourceTree = "<group>"; };
+		8CBC02B81854A9AF0088BB72 /* FOMOrderItemsSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOMOrderItemsSelectionViewController.m; sourceTree = "<group>"; };
 		8CEF3B0F18537DCE0046C217 /* Food Ordering Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Food Ordering Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CEF3B1218537DCE0046C217 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8CEF3B1418537DCE0046C217 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -140,6 +146,24 @@
 				8CBC02AF1854944F0088BB72 /* FOMDateSelectionViewController.m */,
 			);
 			name = DateSelection;
+			sourceTree = "<group>";
+		};
+		8CBC02B21854A5190088BB72 /* RequestCompiler */ = {
+			isa = PBXGroup;
+			children = (
+				8CBC02B31854A5320088BB72 /* FOMRequestCompiler.h */,
+				8CBC02B41854A5320088BB72 /* FOMRequestCompiler.m */,
+			);
+			name = RequestCompiler;
+			sourceTree = "<group>";
+		};
+		8CBC02B61854A98C0088BB72 /* OrderItemsSelection */ = {
+			isa = PBXGroup;
+			children = (
+				8CBC02B71854A9AF0088BB72 /* FOMOrderItemsSelectionViewController.h */,
+				8CBC02B81854A9AF0088BB72 /* FOMOrderItemsSelectionViewController.m */,
+			);
+			name = OrderItemsSelection;
 			sourceTree = "<group>";
 		};
 		8CEF3B0618537DCE0046C217 = {
@@ -234,6 +258,7 @@
 		8CEF3B4D185384C30046C217 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8CBC02B61854A98C0088BB72 /* OrderItemsSelection */,
 				8CBC02AD1854943C0088BB72 /* DateSelection */,
 				8CEF3B6A1853A3AF0046C217 /* RestaurantSelection */,
 				8CEF3B52185385140046C217 /* Root */,
@@ -263,6 +288,7 @@
 		8CEF3B5A185388540046C217 /* Communication */ = {
 			isa = PBXGroup;
 			children = (
+				8CBC02B21854A5190088BB72 /* RequestCompiler */,
 				8CBC02A9185488500088BB72 /* Handler */,
 				8CBC02A8185488420088BB72 /* ResponseParser */,
 			);
@@ -427,8 +453,10 @@
 				8CEF3B63185397EC0046C217 /* FOMRestaurant.m in Sources */,
 				8CBC02AC185488670088BB72 /* FOMResponseParser.m in Sources */,
 				8CEF3B51185384E30046C217 /* FOMNewOrderViewController.m in Sources */,
+				8CBC02B51854A5320088BB72 /* FOMRequestCompiler.m in Sources */,
 				8CEF3B6618539EAE0046C217 /* FOMOrderItem.m in Sources */,
 				8CEF3B6018538C590046C217 /* FOMLoadingDialog.m in Sources */,
+				8CBC02B91854A9AF0088BB72 /* FOMOrderItemsSelectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
