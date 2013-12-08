@@ -40,6 +40,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataManagement\IOrderService.cs" />
+    <Compile Include="DataManagement\Model\OrderInfo.cs" />
+    <Compile Include="DataManagement\Model\OrderItemInfo.cs" />
     <Compile Include="DataManagement\_Impl\OrderService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

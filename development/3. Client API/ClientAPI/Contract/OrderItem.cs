@@ -3,18 +3,15 @@
 namespace ClientAPI.Contract
 {
     [DataContract]
-    public class Dish
+    public class OrderItem
     {
         [DataMember]
         public int DishID { get; set; }
 
         [DataMember]
-        public string Name { get; set; }
+        public int? Quantity { get; set; }
 
         [DataMember]
-        public decimal Price { get; set; }
-
-        [DataMember]
-        public string Description { get; set; }
+        public string Remarks { get; set; }
     }
 }
