@@ -7,7 +7,7 @@ namespace DataAccess.ModelConfiguration.Configurations
     {
         protected override void ConfigureEntity(EntityTypeConfiguration<Person> entity)
         {
-            entity.Property(x => x.Name).HasMaxLength(256);
+            entity.Property(x => x.Name).IsRequired().HasMaxLength(256);
         }
     }
 }

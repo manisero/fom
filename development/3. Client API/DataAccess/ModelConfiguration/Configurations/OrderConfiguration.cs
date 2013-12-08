@@ -7,7 +7,7 @@ namespace DataAccess.ModelConfiguration.Configurations
     {
         protected override void ConfigureEntity(EntityTypeConfiguration<Order> entity)
         {
-            entity.Property(x => x.RestaurantName).HasMaxLength(256);
+            entity.Property(x => x.RestaurantName).IsRequired().HasMaxLength(256);
             entity.Property(x => x.RestaurantAddress).HasMaxLength(512);
             entity.Property(x => x.RestaurantPhoneNumber).HasMaxLength(32);
             entity.Property(x => x.RestaurantEmailAddress).HasMaxLength(256);

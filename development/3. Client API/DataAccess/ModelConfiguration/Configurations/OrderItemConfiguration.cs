@@ -7,7 +7,7 @@ namespace DataAccess.ModelConfiguration.Configurations
     {
         protected override void ConfigureEntity(EntityTypeConfiguration<OrderItem> entity)
         {
-            entity.Property(x => x.DishName).HasMaxLength(512);
+            entity.Property(x => x.DishName).IsRequired().HasMaxLength(512);
         }
     }
 }
