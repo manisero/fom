@@ -26,8 +26,8 @@ namespace ClientAPI
         List<Order> GetOrdersByStatus(string status);
 
         [OperationContract]
-        [WebGet(UriTemplate = "/orders/{orderId}/Set")]
-        List<Payment> SetOrder(string orderId);
+        [WebInvoke(UriTemplate = "/orders/{orderId}/settle", Method = "POST")]
+        List<Payment> SettleOrder(string orderId);
 
         [OperationContract]
         [WebGet(UriTemplate = "users/{userName}/orders")]
