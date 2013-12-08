@@ -119,6 +119,7 @@
     <Compile Include="AutoMapper\Profiles\ClientAPIProfile.cs" />
     <Compile Include="AutoMapper\Profiles\CoreProfile.cs" />
     <Compile Include="Contract\Order.cs" />
+    <Compile Include="Contract\Responses\CreateOrderResponse.cs" />
     <Compile Include="Contract\Restaurant.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

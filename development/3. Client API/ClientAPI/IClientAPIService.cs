@@ -2,6 +2,7 @@
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using ClientAPI.Contract;
+using ClientAPI.Contract.Responses;
 
 namespace ClientAPI
 {
@@ -14,6 +15,6 @@ namespace ClientAPI
 
         [OperationContract]
         [WebInvoke(UriTemplate = "/orders", Method = "POST")]
-        void CreateOrder(Order order);
+        CreateOrderResponse CreateOrder(Order order);
     }
 }

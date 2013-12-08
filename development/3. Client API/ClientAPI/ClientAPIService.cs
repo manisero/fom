@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ServiceModel;
 using System.ServiceModel.Activation;
 using ClientAPI.Contract;
+using ClientAPI.Contract.Responses;
 using DataAccess.Repository;
 using DataSource.DataAccess;
 using ClientAPI.AutoMapper.Extensions;
@@ -30,7 +31,7 @@ namespace ClientAPI
             return _dataProvider.GetRestaurants().MapTo<Restaurant>().ToList();
         }
 
-        public void CreateOrder(Order order)
+        public CreateOrderResponse CreateOrder(Order order)
         {
             var domainOrder = order.MapTo<Domain.Order>();
 
@@ -45,6 +46,8 @@ namespace ClientAPI
 
             _repositoryFactory.Create<Domain.Order>().Add(domainOrder);
             _unitOfWork.SaveChanges();
+
+            return new CreateOrderResponse { OrderID = domainOrder.OrderID };
         }
     }
 }
