@@ -16,6 +16,9 @@ namespace ClientAPI.AutoMapper.Profiles
             CreateMap<DataSource.Domain.Dish, Contract.Dish>()
                 .Map(x => x.Dish_ID, x => x.DishID);
 
+            // Domain -> Contract
+            CreateMap<Domain.Order, Contract.Order>();
+
             // Contract -> Domain
             CreateMap<Contract.Order, Domain.Order>();
 

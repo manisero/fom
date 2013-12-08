@@ -3,6 +3,7 @@ using DataAccess;
 using DataAccess.Repository;
 using DataAccess.Repository._Impl;
 using Ninject.Modules;
+using Ninject.Web.Common;
 
 namespace ClientAPI.Ninject.Modules
 {
@@ -11,7 +12,7 @@ namespace ClientAPI.Ninject.Modules
         public override void Load()
         {
             // Repository
-            Bind<DbContext>().ToConstant(new DataContext());
+            Bind<DbContext>().To<DataContext>().InRequestScope();
             Bind<IUnitOfWork>().To<EntityFrameworkUnitOfWork>();
             Bind<IRepositoryFactory>().To<EntityFrameworkRepositoryFactory>();
         }

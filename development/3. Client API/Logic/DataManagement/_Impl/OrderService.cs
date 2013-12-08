@@ -22,6 +22,11 @@ namespace Logic.DataManagement._Impl
             _dataProvider = dataProvider;
         }
 
+        public IEnumerable<Order> GetOrders()
+        {
+            return _repositoryFactory.Create<Order>().GetAll();
+        }
+
         public Order CreateOrder(int restaurantId, OrderInfo orderInfo)
         {
             // TODO: Retrieve order owner

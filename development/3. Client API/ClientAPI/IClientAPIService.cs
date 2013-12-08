@@ -18,6 +18,10 @@ namespace ClientAPI
         List<Dish> GetRestaurantDishes(string restaurantId);
 
         [OperationContract]
+        [WebGet(UriTemplate = "/orders")]
+        List<Order> GetAllOrders();
+
+        [OperationContract]
         [WebInvoke(UriTemplate = "/orders", Method = "POST")]
         CreateOrderResponse CreateOrder(Order order);
 
