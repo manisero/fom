@@ -43,9 +43,18 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
-    NSString *response = [[NSString alloc] initWithData:self.data encoding:NSUTF8StringEncoding];
-    
-    NSLog(@"response: %@", response);
+    if (self.delegate != nil)
+    {
+        [self.delegate communicationFinishedSuccessfully:self.data];
+    }
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    if (self.delegate != nil)
+    {
+        [self.delegate communicationFailedWithError:error];
+    }
 }
 
 @end

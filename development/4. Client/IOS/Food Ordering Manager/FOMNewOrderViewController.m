@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 Jakub Turek. All rights reserved.
 //
 
+#import "FOMDateSelectionViewController.h"
 #import "FOMNewOrderViewController.h"
 #import "FOMOrderItem.h"
 #import "FOMRestaurantSelectionViewController.h"
@@ -46,47 +47,26 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSUInteger orderCount = [self.order.items count];
-    return section == 0 ? 2 : orderCount > 0 ? orderCount : 1;
+    return 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"RightDetailCell"];
-    
-    if (indexPath.section == 0)
-    {
-        cell.textLabel.text = NSLocalizedString(indexPath.row == 0 ? @"Restaurant Name" : @"Order Date", nil);
+    cell.textLabel.text = NSLocalizedString(indexPath.row == 0 ? @"Restaurant Name" : @"Order Date", nil);
         
-        if (indexPath.row == 0)
-        {
-            cell.detailTextLabel.text = self.order.restaurant != nil ? self.order.restaurant.name : NSLocalizedString(@"Choose", nil);
-        }
-        else if (indexPath.row == 1)
-        {
-            cell.detailTextLabel.text = self.order.date != nil ? [self formatDate:self.order.date] : NSLocalizedString(@"Choose", nil);
-        }
-    }
-    else if (indexPath.section == 1)
+    if (indexPath.row == 0)
     {
-        if ([self.order.items count] > 0)
-        {
-            FOMOrderItem *item = [self.order.items objectAtIndex:indexPath.row];
-            
-            cell.textLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Order %d", nil), indexPath.row + 1];
-            cell.detailTextLabel.text = item.dish;
-        }
-        else
-        {
-            cell.textLabel.text = NSLocalizedString(@"No Order Entries", nil);
-            cell.detailTextLabel.text = @"";
-            cell.accessoryType = UITableViewCellAccessoryNone;
-        }
+        cell.detailTextLabel.text = self.order.restaurant != nil ? self.order.restaurant.name : NSLocalizedString(@"Choose", nil);
+    }
+    else if (indexPath.row == 1)
+    {
+        cell.detailTextLabel.text = self.order.date != nil ? [self formatDate:self.order.date] : NSLocalizedString(@"Choose", nil);
     }
     
     return cell;
@@ -95,7 +75,7 @@
 - (NSString *)formatDate:(NSDate *)date
 {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.dateFormat = @"hh:MM";
+    formatter.dateFormat = @"HH:mm";
     
     return [formatter stringFromDate:date];
 }
@@ -113,7 +93,7 @@
     
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10.0, headerFrame.origin.y, headerFrame.size.width, headerFrame.size.height)];
     label.font = [UIFont boldSystemFontOfSize:17.0];
-    label.text = NSLocalizedString(section == 0 ? @"Order Details" : @"Order Entries", nil);
+    label.text = NSLocalizedString(@"Order Details", nil);
     
     [view addSubview:label];
     
@@ -122,12 +102,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 0)
+    if (indexPath.row == 0)
     {
-        if (indexPath.row == 0)
-        {
-            [self performSegueWithIdentifier:@"SelectRestaurant" sender:self];
-        }
+        [self performSegueWithIdentifier:@"SelectRestaurant" sender:self];
+    }
+    else if (indexPath.row == 1)
+    {
+        [self performSegueWithIdentifier:@"SelectDate" sender:self];
     }
 }
 
@@ -139,11 +120,21 @@
         destinationViewController.selectedRestaurant = self.order.restaurant;
         destinationViewController.delegate = self;
     }
+    else if ([segue.identifier isEqualToString:@"SelectDate"])
+    {
+        FOMDateSelectionViewController *destinationViewController = segue.destinationViewController;
+        destinationViewController.delegate = self;
+    }
 }
 
 - (void)restaurantHasChanged:(FOMRestaurant *)restaurant
 {
     self.order.restaurant = restaurant;
+}
+
+- (void)orderDateHasChanged:(NSDate *)date
+{
+    self.order.date = date;
 }
 
 @end

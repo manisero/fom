@@ -21,9 +21,9 @@ class Migration(SchemaMigration):
         # Adding model 'Dish'
         db.create_table(u'datamanager_dish', (
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('restaurant', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['datamanager.Restaurant'])),
+            ('restaurant', self.gf('django.db.models.fields.related.ForeignKey')(related_name='dishes', to=orm['datamanager.Restaurant'])),
             ('name', self.gf('django.db.models.fields.CharField')(max_length=512)),
-            ('price', self.gf('django.db.models.fields.DecimalField')(max_digits=3, decimal_places=2)),
+            ('price', self.gf('django.db.models.fields.DecimalField')(max_digits=5, decimal_places=2)),
             ('description', self.gf('django.db.models.fields.TextField')()),
         ))
         db.send_create_signal(u'datamanager', ['Dish'])
@@ -43,8 +43,8 @@ class Migration(SchemaMigration):
             'description': ('django.db.models.fields.TextField', [], {}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '512'}),
-            'price': ('django.db.models.fields.DecimalField', [], {'max_digits': '3', 'decimal_places': '2'}),
-            'restaurant': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['datamanager.Restaurant']"})
+            'price': ('django.db.models.fields.DecimalField', [], {'max_digits': '5', 'decimal_places': '2'}),
+            'restaurant': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'dishes'", 'to': u"orm['datamanager.Restaurant']"})
         },
         u'datamanager.restaurant': {
             'Meta': {'object_name': 'Restaurant'},

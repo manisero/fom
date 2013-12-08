@@ -7,8 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FOMCommunicationHandlerDelegate.h"
 
 @interface FOMCommunicationHandler : NSObject<NSURLConnectionDataDelegate, NSURLConnectionDelegate>
+
+@property id<FOMCommunicationHandlerDelegate> delegate;
 
 @property (nonatomic, strong) NSURLConnection *connection;
 @property (nonatomic, strong) NSMutableData *data;

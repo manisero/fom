@@ -8,6 +8,8 @@
 
 #import "FOMCommunicationHandler.h"
 #import "FOMConfigurationProvider.h"
+#import "FOMLoadingDialog.h"
+#import "FOMResponseParser.h"
 #import "FOMRestaurant.h"
 #import "FOMRestaurantSelectionViewController.h"
 
@@ -27,15 +29,27 @@
 {
     [super viewDidLoad];
     [self fetchRestaurants];
-    [[[FOMCommunicationHandler alloc] init] startConnection:[FOMConfigurationProvider restaurantsServiceAddress]];
 }
 
 - (void)fetchRestaurants
 {
-    FOMRestaurant *firstRestaurant = [FOMRestaurant restaurantWithName:@"Restauracja #1" andIdentifier:[NSNumber numberWithInt:1]];
-    FOMRestaurant *secondRestaurant = [FOMRestaurant restaurantWithName:@"Restauracja #2" andIdentifier:[NSNumber numberWithInt:2]];
-    
-    self.restaurants = [[NSArray alloc] initWithObjects:firstRestaurant, secondRestaurant, nil];
+    self.restaurants = [[NSArray alloc] init];
+    [self showLoadingDialog];
+    [self invokeCommunication];
+}
+
+- (void)showLoadingDialog
+{
+    self.loadingDialog = [[FOMLoadingDialog alloc] initWithFrame:self.view.frame];
+    [self.view addSubview:self.loadingDialog];
+    [self.loadingDialog startAnimating];
+}
+
+- (void)invokeCommunication
+{
+    FOMCommunicationHandler *communicationHandler = [[FOMCommunicationHandler alloc] init];
+    [communicationHandler setDelegate:self];
+    [communicationHandler startConnection:[FOMConfigurationProvider restaurantsServiceAddress]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -109,6 +123,35 @@
     }
     
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)communicationFinishedSuccessfully:(NSData *)sentData
+{
+    [self addFetchedRestaurants:[FOMResponseParser parseRestaurantsFromResponse:sentData]];
+    [self hideLoadingDialog];
+}
+
+- (void)addFetchedRestaurants:(NSArray *)restaurants
+{
+    self.restaurants = restaurants;
+    
+    if ([self.restaurants count] > 0)
+    {
+        self.selectedRestaurant = [self.restaurants objectAtIndex:0];
+    }
+    
+    [self.pickerView reloadAllComponents];
+}
+
+- (void)hideLoadingDialog
+{
+    [self.loadingDialog stopAnimating];
+    [self.loadingDialog removeFromSuperview];
+}
+
+- (void)communicationFailedWithError:(NSError *)error
+{
+    [self hideLoadingDialog];
 }
 
 @end

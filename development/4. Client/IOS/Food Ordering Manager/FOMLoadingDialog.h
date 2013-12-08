@@ -14,4 +14,7 @@
 @property (nonatomic, strong) UIActivityIndicatorView *loadingIndicator;
 @property (nonatomic, strong) UILabel *loadingLabel;
 
+- (void)startAnimating;
+- (void)stopAnimating;
+
 @end

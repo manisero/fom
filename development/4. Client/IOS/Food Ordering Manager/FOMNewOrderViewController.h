@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "FOMOrder.h"
+#import "FOMOrderDateDataDelegate.h"
 #import "FOMRestaurantDataDelegate.h"
 
-@interface FOMNewOrderViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, FOMRestaurantDataDelegate>
+@interface FOMNewOrderViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, FOMRestaurantDataDelegate, FOMOrderDateDataDelegate>
 
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
 

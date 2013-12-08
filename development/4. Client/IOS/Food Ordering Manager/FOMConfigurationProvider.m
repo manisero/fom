@@ -10,10 +10,22 @@
 
 @implementation FOMConfigurationProvider
 
++ (NSDictionary *)defaultSettings
+{
+    NSString *defaultSettingsPath = [[NSBundle mainBundle] pathForResource:@"DefaultConfiguration" ofType:@"plist"];
+    return [[NSDictionary alloc] initWithContentsOfFile:defaultSettingsPath];
+}
+
++ (NSString *)defaultServiceAddress
+{
+    return [[self defaultSettings] valueForKey:@"serviceAddress"];
+}
+
 + (NSString *)restaurantsServiceAddress
 {
     NSString *serviceAddress = [[NSUserDefaults standardUserDefaults] valueForKey:@"serviceAddress"];
-    serviceAddress = serviceAddress != nil ? serviceAddress : @"http://192.168.1.147:8080/api/restaurant";
+    serviceAddress = serviceAddress != nil ? serviceAddress : [self defaultServiceAddress];
+    serviceAddress = [NSString stringWithFormat:@"%@%@", serviceAddress, @"api/restaurants"];
     
     return serviceAddress;
 }

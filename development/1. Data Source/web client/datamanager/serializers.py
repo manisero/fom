@@ -3,6 +3,7 @@ from datamanager.models import Restaurant, Dish
 
 
 class DishSerializer(serializers.ModelSerializer):
+    dish_id = serializers.Field(source='id')
     restaurant_id = serializers.PrimaryKeyRelatedField(source='restaurant')
 
     class Meta:
@@ -11,6 +12,7 @@ class DishSerializer(serializers.ModelSerializer):
 
 
 class RestaurantSerializer(serializers.ModelSerializer):
+    restaurant_id = serializers.Field(source='id')
     dishes = DishSerializer(many=True)
 
     class Meta:
