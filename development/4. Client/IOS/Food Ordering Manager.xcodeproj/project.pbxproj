@@ -12,6 +12,8 @@
 		8CBC02B01854944F0088BB72 /* FOMDateSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CBC02AF1854944F0088BB72 /* FOMDateSelectionViewController.m */; };
 		8CBC02B51854A5320088BB72 /* FOMRequestCompiler.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CBC02B41854A5320088BB72 /* FOMRequestCompiler.m */; };
 		8CBC02B91854A9AF0088BB72 /* FOMOrderItemsSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CBC02B81854A9AF0088BB72 /* FOMOrderItemsSelectionViewController.m */; };
+		8CBC02BD1854B2EF0088BB72 /* FOMOrderItemDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CBC02BC1854B2EF0088BB72 /* FOMOrderItemDetailsViewController.m */; };
+		8CBC02C01854B9DF0088BB72 /* FOMDish.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CBC02BF1854B9DF0088BB72 /* FOMDish.m */; };
 		8CEF3B1318537DCE0046C217 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEF3B1218537DCE0046C217 /* Foundation.framework */; };
 		8CEF3B1518537DCE0046C217 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEF3B1418537DCE0046C217 /* CoreGraphics.framework */; };
 		8CEF3B1718537DCE0046C217 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEF3B1618537DCE0046C217 /* UIKit.framework */; };
@@ -58,6 +60,11 @@
 		8CBC02B41854A5320088BB72 /* FOMRequestCompiler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOMRequestCompiler.m; sourceTree = "<group>"; };
 		8CBC02B71854A9AF0088BB72 /* FOMOrderItemsSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOMOrderItemsSelectionViewController.h; sourceTree = "<group>"; };
 		8CBC02B81854A9AF0088BB72 /* FOMOrderItemsSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOMOrderItemsSelectionViewController.m; sourceTree = "<group>"; };
+		8CBC02BB1854B2EF0088BB72 /* FOMOrderItemDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOMOrderItemDetailsViewController.h; sourceTree = "<group>"; };
+		8CBC02BC1854B2EF0088BB72 /* FOMOrderItemDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOMOrderItemDetailsViewController.m; sourceTree = "<group>"; };
+		8CBC02BE1854B9DF0088BB72 /* FOMDish.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOMDish.h; sourceTree = "<group>"; };
+		8CBC02BF1854B9DF0088BB72 /* FOMDish.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOMDish.m; sourceTree = "<group>"; };
+		8CBC02C11854BDED0088BB72 /* FOMDishDataDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FOMDishDataDelegate.h; sourceTree = "<group>"; };
 		8CEF3B0F18537DCE0046C217 /* Food Ordering Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Food Ordering Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CEF3B1218537DCE0046C217 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8CEF3B1418537DCE0046C217 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -166,6 +173,15 @@
 			name = OrderItemsSelection;
 			sourceTree = "<group>";
 		};
+		8CBC02BA1854B2CD0088BB72 /* OrderItemDetails */ = {
+			isa = PBXGroup;
+			children = (
+				8CBC02BB1854B2EF0088BB72 /* FOMOrderItemDetailsViewController.h */,
+				8CBC02BC1854B2EF0088BB72 /* FOMOrderItemDetailsViewController.m */,
+			);
+			name = OrderItemDetails;
+			sourceTree = "<group>";
+		};
 		8CEF3B0618537DCE0046C217 = {
 			isa = PBXGroup;
 			children = (
@@ -251,6 +267,8 @@
 				8CEF3B62185397EC0046C217 /* FOMRestaurant.m */,
 				8CEF3B6418539EAE0046C217 /* FOMOrderItem.h */,
 				8CEF3B6518539EAE0046C217 /* FOMOrderItem.m */,
+				8CBC02BE1854B9DF0088BB72 /* FOMDish.h */,
+				8CBC02BF1854B9DF0088BB72 /* FOMDish.m */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -258,6 +276,7 @@
 		8CEF3B4D185384C30046C217 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8CBC02BA1854B2CD0088BB72 /* OrderItemDetails */,
 				8CBC02B61854A98C0088BB72 /* OrderItemsSelection */,
 				8CBC02AD1854943C0088BB72 /* DateSelection */,
 				8CEF3B6A1853A3AF0046C217 /* RestaurantSelection */,
@@ -327,6 +346,7 @@
 				8CEF3B6C1853ABA80046C217 /* FOMRestaurantDataDelegate.h */,
 				8CBC02A7185485A40088BB72 /* FOMCommunicationHandlerDelegate.h */,
 				8CBC02B1185498FD0088BB72 /* FOMOrderDateDataDelegate.h */,
+				8CBC02C11854BDED0088BB72 /* FOMDishDataDelegate.h */,
 			);
 			name = Delegates;
 			sourceTree = "<group>";
@@ -442,10 +462,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CBC02BD1854B2EF0088BB72 /* FOMOrderItemDetailsViewController.m in Sources */,
 				8CEF3B2918537DCE0046C217 /* FOMRootViewController.m in Sources */,
 				8CEF3B691853A3AB0046C217 /* FOMRestaurantSelectionViewController.m in Sources */,
 				8CEF3B1F18537DCE0046C217 /* main.m in Sources */,
 				8CEF3B2318537DCE0046C217 /* FOMAppDelegate.m in Sources */,
+				8CBC02C01854B9DF0088BB72 /* FOMDish.m in Sources */,
 				8CEF3B6F1853B2220046C217 /* FOMCommunicationHandler.m in Sources */,
 				8CEF3B4A1853812E0046C217 /* FOMOrder.m in Sources */,
 				8CEF3B751853B78D0046C217 /* FOMConfigurationProvider.m in Sources */,

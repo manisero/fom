@@ -39,4 +39,22 @@
     return serviceAddress;
 }
 
++ (NSString *)dishesServiceAddress:(NSNumber *)restaurantId
+{
+    NSString *serviceAddress = [[NSUserDefaults standardUserDefaults] valueForKey:@"serviceAddress"];
+    serviceAddress = serviceAddress != nil ? serviceAddress : [self defaultServiceAddress];
+    serviceAddress = [NSString stringWithFormat:@"%@%@%@%@", serviceAddress, @"api/restaurants/", restaurantId, @"/dishes"];
+    
+    return serviceAddress;
+}
+
++ (NSString *)orderItemsServiceAddress:(NSNumber *)orderId
+{
+    NSString *serviceAddress = [[NSUserDefaults standardUserDefaults] valueForKey:@"serviceAddress"];
+    serviceAddress = serviceAddress != nil ? serviceAddress : [self defaultServiceAddress];
+    serviceAddress = [NSString stringWithFormat:@"%@%@%@%@", serviceAddress, @"api/orders/", orderId, @"/items"];
+    
+    return serviceAddress;
+}
+
 @end

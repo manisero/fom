@@ -32,6 +32,11 @@
     [self startConnectionWithAddress:address andMethod:@"POST" andBody:body];
 }
 
+- (void)startPutConnectionWithAddress:(NSString *)address andBody:(NSData *)body
+{
+    [self startConnectionWithAddress:address andMethod:@"PUT" andBody:body];
+}
+
 - (void)startConnectionWithAddress:(NSString *)address andMethod:(NSString *)method andBody:(NSData *)body
 {
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:address]];

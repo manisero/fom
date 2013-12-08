@@ -133,7 +133,7 @@
     else if ([segue.identifier isEqualToString:@"SelectOrderItems"])
     {
         FOMOrderItemsSelectionViewController *destinationViewController = segue.destinationViewController;
-        destinationViewController.orderId = self.order.orderId;
+        destinationViewController.order = self.order;
     }
 }
 

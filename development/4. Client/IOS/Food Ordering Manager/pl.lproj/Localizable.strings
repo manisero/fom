@@ -20,3 +20,12 @@
 "Restaurant Choice" = "Wybór restauracji";
 "Time Span Choice" = "Wybór czasu zamówienia";
 "Creating Order" = "Trwa tworzenie...";
+"Dish Choice" = "Wybór posiłku";
+"Price Details" = "Cena";
+"Send" = "Wyślij";
+"Send In Progress" = "Trwa przesyłanie...";
+"Sent" = "Przesłano";
+"Thank You For Ordering" = "Dziękujemy za złożenie zamówienia!";
+"OK" = "OK";
+"Error" = "Błąd!";
+"Ordering Failed" = "Nie udało się złożyć zamówienia";

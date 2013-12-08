@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 Jakub Turek. All rights reserved.
 //
 
+#import "FOMDish.h"
 #import "FOMOrder.h"
 #import "FOMRequestCompiler.h"
 
@@ -29,6 +30,21 @@
     [formatter setDateFormat:dateFormat];
     
     return [formatter stringFromDate:date];
+}
+
++ (NSData *)createRequestBodyForOrderItems:(FOMOrder *)order
+{
+    NSMutableArray *orderItemDictionaries = [[NSMutableArray alloc] init];
+    
+   for (FOMDish *dish in order.items)
+   {
+       NSMutableDictionary *orderItemDictionary = [[NSMutableDictionary alloc] init];
+       [orderItemDictionary setObject:dish.identifier forKey:@"DishID"];
+       [orderItemDictionaries addObject:orderItemDictionary];
+   }
+    
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:orderItemDictionaries options:NSJSONWritingPrettyPrinted error:nil];
+    return jsonData;
 }
 
 @end

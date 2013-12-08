@@ -12,5 +12,6 @@
 
 + (NSData *)createRequestBodyForOrder:(FOMOrder *)order;
 + (NSString *)date:(NSDate *)date AsStringWithFormat:(NSString *)dateFormat;
++ (NSData *)createRequestBodyForOrderItems:(FOMOrder *)order;
 
 @end

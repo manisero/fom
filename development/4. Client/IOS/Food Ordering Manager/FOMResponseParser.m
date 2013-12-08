@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 Jakub Turek. All rights reserved.
 //
 
+#import "FOMDish.h"
 #import "FOMResponseParser.h"
 #import "FOMRestaurant.h"
 
@@ -45,6 +46,24 @@
 {
     NSDictionary *jsonResponse = [self dictionaryFromResponse:response];
     return [jsonResponse valueForKey:@"OrderID"];
+}
+
++ (NSArray *)parseDishesFromResponse:(NSData *)response
+{
+    NSMutableArray *dishes = [[NSMutableArray alloc] init];
+    NSDictionary *jsonResponse = [self dictionaryFromResponse:response];
+    
+    for (NSDictionary *dish in jsonResponse)
+    {
+        NSString *name = [dish valueForKey:@"Name"];
+        NSNumber *dishId = [dish valueForKey:@"DishID"];
+        NSNumber *price = [dish valueForKey:@"Price"];
+        
+        FOMDish *dish = [FOMDish dishWithIdentifier:dishId name:name andPrice:price];
+        [dishes addObject:dish];
+    }
+    
+    return dishes;
 }
 
 @end

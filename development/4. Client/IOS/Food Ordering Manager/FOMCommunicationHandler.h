@@ -18,5 +18,6 @@
 
 - (void)startGetConnectionWithAddress:(NSString *)address;
 - (void)startPostConnectionWithAddress:(NSString *)address andBody:(NSData *)body;
+- (void)startPutConnectionWithAddress:(NSString *)address andBody:(NSData *)body;
 
 @end
