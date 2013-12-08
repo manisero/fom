@@ -29,6 +29,13 @@ namespace ClientAPI
             return _dataProvider.GetRestaurants().MapToCollection<Restaurant>().ToList();
         }
 
+        public List<Dish> GetRestaurantDishes(string restaurantId)
+        {
+            var restaurant = _dataProvider.GetRestaurant(int.Parse(restaurantId));
+
+            return restaurant.Dishes.MapToCollection<Dish>().ToList();
+        }
+
         public CreateOrderResponse CreateOrder(Order order)
         {
             var newOrder = _orderService.CreateOrder(order.RestaurantID,
