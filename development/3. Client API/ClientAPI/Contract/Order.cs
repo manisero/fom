@@ -25,7 +25,7 @@ namespace ClientAPI.Contract
         public string RestaurantEmailAddress { get; set; }
 
         [DataMember]
-        public DateTime DeliveryDate { get; set; }
+        public DateTime? DeliveryDate { get; set; }
 
         [DataMember]
         public TimeSpan? IntendedDeliveryTime { get; set; }

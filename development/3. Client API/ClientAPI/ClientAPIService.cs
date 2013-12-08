@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.ServiceModel;
 using System.ServiceModel.Activation;
@@ -32,6 +33,15 @@ namespace ClientAPI
         public void CreateOrder(Order order)
         {
             var domainOrder = order.MapTo<Domain.Order>();
+
+            // TODO: Get owner from request
+            var owner = _repositoryFactory.Create<Domain.Person>().GetAll().First();
+            domainOrder.Owner = owner;
+
+            if (order.DeliveryDate == null)
+            {
+                domainOrder.DeliveryDate = DateTime.UtcNow.Date;
+            }
 
             _repositoryFactory.Create<Domain.Order>().Add(domainOrder);
             _unitOfWork.SaveChanges();
