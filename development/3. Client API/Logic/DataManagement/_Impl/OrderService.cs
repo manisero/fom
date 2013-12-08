@@ -61,10 +61,9 @@ namespace Logic.DataManagement._Impl
             return order;
         }
 
-        public void CreateOrderItems(int orderId, IEnumerable<OrderItemInfo> orderItemInfos)
+        public void CreateOrderItems(string ownerName, int orderId, IEnumerable<OrderItemInfo> orderItemInfos)
         {
-            // TODO: Retrieve order owner
-            var owner = _repositoryFactory.Create<Person>().GetAll().FirstOrDefault();
+            var owner = _repositoryFactory.Create<Person>().GetSingleOrDefault(x => x.Name == ownerName);
 
             if (owner == null)
             {

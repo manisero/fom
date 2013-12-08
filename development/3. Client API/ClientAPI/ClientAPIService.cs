@@ -50,9 +50,9 @@ namespace ClientAPI
             return new CreateOrderResponse { OrderID = newOrder.OrderID };
         }
 
-        public void CreateOrderItems(string orderId, IEnumerable<OrderItem> orderItems)
+        public void CreateOrderItems(string userName, string orderId, IEnumerable<OrderItem> orderItems)
         {
-            _orderService.CreateOrderItems(orderId.ToInt(), orderItems.MapToCollection<OrderItemInfo>());
+            _orderService.CreateOrderItems(userName, orderId.ToInt(), orderItems.MapToCollection<OrderItemInfo>());
         }
     }
 }
