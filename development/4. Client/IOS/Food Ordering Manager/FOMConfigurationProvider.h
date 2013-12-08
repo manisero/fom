@@ -11,10 +11,12 @@
 @interface FOMConfigurationProvider : NSObject
 
 + (NSString *)restaurantsServiceAddress;
-+ (NSString *)ordersServiceAddress;
++ (NSString *)ordersServiceAddressForStatus:(NSString *)status;
 + (NSString *)dishesServiceAddress:(NSNumber *)restaurantId;
 + (NSString *)orderItemsServiceAddress:(NSNumber *)orderId;
 + (NSString *)createOrdersServiceAddress;
 + (NSString *)createOrderItemsServiceAddress:(NSNumber *)orderId;
++ (NSString *)settlementServiceAddress:(NSNumber *)orderId;
++ (NSString *)myOrdersServiceAddress;
 
 @end

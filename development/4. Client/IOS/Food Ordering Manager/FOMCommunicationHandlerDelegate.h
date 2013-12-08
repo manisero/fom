@@ -10,7 +10,7 @@
 
 @protocol FOMCommunicationHandlerDelegate <NSObject>
 
-- (void)communicationFinishedSuccessfully:(NSData *)sentData;
-- (void)communicationFailedWithError:(NSError *)error;
+- (void)communicationForAddress:(NSString *)address finishedSuccessfullyWithResponse:(NSData *)sentData;
+- (void)communicationForAddress:(NSString *)address failedWithError:(NSError *)error;
 
 @end

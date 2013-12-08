@@ -49,6 +49,7 @@
         [request setHTTPBody:body];
     }
     
+    self.address = address;
     self.connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
 }
 
@@ -67,7 +68,7 @@
     if (self.delegate != nil)
     {
         NSLog(@"response: %@", [[NSString alloc] initWithData:self.data encoding:NSUTF8StringEncoding]);
-        [self.delegate communicationFinishedSuccessfully:self.data];
+        [self.delegate communicationForAddress:self.address finishedSuccessfullyWithResponse:self.data];
     }
 }
 
@@ -75,7 +76,7 @@
 {
     if (self.delegate != nil)
     {
-        [self.delegate communicationFailedWithError:error];
+        [self.delegate communicationForAddress:self.address failedWithError:error];
     }
 }
 

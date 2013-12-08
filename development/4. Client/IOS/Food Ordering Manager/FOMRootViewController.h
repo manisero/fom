@@ -16,6 +16,8 @@
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) FOMLoadingDialog *loadingDialog;
 @property (nonatomic, strong) FOMOrder *selectedOrder;
-@property (nonatomic, strong) NSArray *orders;
+@property (nonatomic, strong) NSArray *myOrders;
+@property (nonatomic, strong) NSArray *availableOrders;
+@property (nonatomic, strong) NSNumber *queriesToComplete;
 
 @end

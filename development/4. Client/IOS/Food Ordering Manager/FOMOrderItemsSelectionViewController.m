@@ -160,7 +160,7 @@
     [self.tableView reloadData];
 }
 
-- (void)communicationFinishedSuccessfully:(NSData *)sentData
+- (void)communicationForAddress:(NSString *)address finishedSuccessfullyWithResponse:(NSData *)sentData
 {
     [self hideSendingDialog];
     [self testResponseShouldBeEmpty:sentData];
@@ -198,7 +198,7 @@
     [alert show];
 }
 
-- (void)communicationFailedWithError:(NSError *)error
+- (void)communicationForAddress:(NSString *)address failedWithError:(NSError *)error
 {
     [self hideSendingDialog];
     [self showFailureDialog];

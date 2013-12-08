@@ -152,7 +152,7 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (void)communicationFinishedSuccessfully:(NSData *)sentData
+- (void)communicationForAddress:(NSString *)address finishedSuccessfullyWithResponse:(NSData *)sentData
 {
     [self addFetchedDishes:[FOMResponseParser parseDishesFromResponse:sentData]];
     [self hideLoadingDialog];
@@ -176,7 +176,7 @@
     [self.loadingDialog removeFromSuperview];
 }
 
-- (void)communicationFailedWithError:(NSError *)error
+- (void)communicationForAddress:(NSString *)address failedWithError:(NSError *)error
 {
     [self hideLoadingDialog];
 }

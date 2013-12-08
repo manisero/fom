@@ -24,13 +24,19 @@
 {
     [super viewDidLoad];
     [self.view addSubview:[[FOMLoadingDialog alloc] initWithFrame:self.view.frame]];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
     [self fetchOrders];
 }
 
 - (void)fetchOrders
 {
     [self showLoadingDialog];
-    [self invokeFetchRemoteOrders];
+    [self configureQueriesToComplete];
+    [self invokeFetchMyOrders];
+    [self invokeFetchAvailableOrders];
 }
 
 - (void)showLoadingDialog
@@ -40,11 +46,23 @@
     [self.loadingDialog startAnimating];
 }
 
-- (void)invokeFetchRemoteOrders
+- (void)configureQueriesToComplete
+{
+    self.queriesToComplete = [NSNumber numberWithInteger:2];
+}
+
+- (void)invokeFetchMyOrders
 {
     FOMCommunicationHandler *communicationHandler = [[FOMCommunicationHandler alloc] init];
     [communicationHandler setDelegate:self];
-    [communicationHandler startGetConnectionWithAddress:[FOMConfigurationProvider ordersServiceAddress]];
+    [communicationHandler startGetConnectionWithAddress:[FOMConfigurationProvider myOrdersServiceAddress]];
+}
+
+- (void)invokeFetchAvailableOrders
+{
+    FOMCommunicationHandler *communicationHandler = [[FOMCommunicationHandler alloc] init];
+    [communicationHandler setDelegate:self];
+    [communicationHandler startGetConnectionWithAddress:[FOMConfigurationProvider ordersServiceAddressForStatus:@"open"]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,12 +72,12 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return section == 0 ? 1 : [self.orders count];
+    return section == 0 ? 1 : section == 1 ? [self.myOrders count] : [self.availableOrders count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -73,9 +91,14 @@
         {
             cell.textLabel.text = NSLocalizedString(@"New Order", nil);
         }
-        else
+        else if (indexPath.section == 1)
         {
-            FOMOrder *order = [self.orders objectAtIndex:indexPath.row];
+            FOMOrder *order = [self.myOrders objectAtIndex:indexPath.row];
+            cell.textLabel.text = order.name;
+        }
+        else if (indexPath.section == 2)
+        {
+            FOMOrder *order = [self.availableOrders objectAtIndex:indexPath.row];
             cell.textLabel.text = order.name;
         }
     }
@@ -89,9 +112,14 @@
     {
         [self performSegueWithIdentifier:@"NewOrder" sender:self];
     }
-    else
+    else if (indexPath.section == 1)
     {
-        self.selectedOrder = [self.orders objectAtIndex:indexPath.row];
+        self.selectedOrder = [self.myOrders objectAtIndex:indexPath.row];
+        [self performSegueWithIdentifier:@"OrderDetails" sender:self];
+    }
+    else if (indexPath.section == 2)
+    {
+        self.selectedOrder = [self.availableOrders objectAtIndex:indexPath.row];
         [self performSegueWithIdentifier:@"OrderDetails" sender:self];
     }
 }
@@ -109,7 +137,7 @@
     
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10.0, headerFrame.origin.y, headerFrame.size.width, headerFrame.size.height)];
     label.font = [UIFont boldSystemFontOfSize:17.0];
-    label.text = NSLocalizedString(section == 0 ? @"New Order Header" : @"Existing Order Header", nil);
+    label.text = NSLocalizedString(section == 0 ? @"New Order Header" : section == 1 ? @"My Order Header" : @"Available Order Header", nil);
     
     [view addSubview:label];
     
@@ -125,25 +153,42 @@
     }
 }
 
-- (void)communicationFinishedSuccessfully:(NSData *)sentData
+- (void)communicationForAddress:(NSString *)address finishedSuccessfullyWithResponse:(NSData *)sentData
 {
     [self hideLoadingDialog];
-    [self setOrdersFromResponse:sentData];
+    [self setOrdersFromResponse:sentData andAddress:address];
 }
 
 - (void)hideLoadingDialog
 {
+    self.queriesToComplete = [NSNumber numberWithInteger:[self.queriesToComplete intValue] - 1];
+    
+    if ([self.queriesToComplete integerValue] > 0)
+    {
+        return;
+    }
+    
     [self.loadingDialog stopAnimating];
     [self.loadingDialog removeFromSuperview];
 }
 
-- (void)setOrdersFromResponse:(NSData *)response
+- (void)setOrdersFromResponse:(NSData *)response andAddress:(NSString *)address
 {
-    self.orders = [FOMResponseParser parseOrdersFromResponse:response];
+    NSArray *orders = [FOMResponseParser parseOrdersFromResponse:response];
+    
+    if ([address isEqualToString:[FOMConfigurationProvider myOrdersServiceAddress]])
+    {
+        self.myOrders = orders;
+    }
+    else
+    {
+        self.availableOrders = orders;
+    }
+    
     [self.tableView reloadData];
 }
 
-- (void)communicationFailedWithError:(NSError *)error
+- (void)communicationForAddress:(NSString *)address failedWithError:(NSError *)error
 {
     [self hideLoadingDialog];
 }

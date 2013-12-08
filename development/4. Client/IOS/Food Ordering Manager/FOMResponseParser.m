@@ -10,6 +10,7 @@
 #import "FOMOrder.h"
 #import "FOMResponseParser.h"
 #import "FOMRestaurant.h"
+#import "FOMSettlement.h"
 
 @implementation FOMResponseParser
 
@@ -97,6 +98,23 @@
     [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     
     return [formatter dateFromString:[NSString stringWithFormat:@"%@ %@", deliveryDate, deliveryTime]];
+}
+
++ (NSArray *)parseSettlementsFromResponse:(NSData *)response
+{
+    NSMutableArray *settlements = [[NSMutableArray alloc] init];
+    NSDictionary *jsonResponse = [self dictionaryFromResponse:response];
+    
+    for (NSDictionary *settlement in jsonResponse)
+    {
+        NSString *name = [[settlement objectForKey:@"Person"] objectForKey:@"Name"];
+        NSNumber *toSettle = [settlement objectForKey:@"Amount"];
+        
+        FOMSettlement *settlement = [FOMSettlement settlementFor:name withAmountToSettle:toSettle];
+        [settlements addObject:settlement];
+    }
+    
+    return settlements;
 }
 
 @end

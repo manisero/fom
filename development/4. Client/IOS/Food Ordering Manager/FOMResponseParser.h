@@ -14,5 +14,6 @@
 + (NSNumber *)parseOrderIdFromResponse:(NSData *)response;
 + (NSArray *)parseDishesFromResponse:(NSData *)response;
 + (NSArray *)parseOrdersFromResponse:(NSData *)response;
++ (NSArray *)parseSettlementsFromResponse:(NSData *)response;
 
 @end

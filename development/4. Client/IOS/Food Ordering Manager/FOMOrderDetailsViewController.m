@@ -6,9 +6,13 @@
 //  Copyright (c) 2013 Jakub Turek. All rights reserved.
 //
 
+#import "FOMCommunicationHandler.h"
+#import "FOMConfigurationProvider.h"
 #import "FOMDateUtilities.h"
 #import "FOMOrderDetailsViewController.h"
 #import "FOMOrderItemsSelectionViewController.h"
+#import "FOMResponseParser.h"
+#import "FOMSettlement.h"
 
 @interface FOMOrderDetailsViewController ()
 
@@ -27,6 +31,32 @@
     [super viewDidLoad];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [self showLoadingDialog];
+    [self configureSettlementProperty];
+    [self fetchSettlement];
+}
+
+- (void)showLoadingDialog
+{
+    self.loadingDialog = [[FOMLoadingDialog alloc] initWithFrame:self.view.frame];
+    [self.view addSubview:self.loadingDialog];
+    [self.loadingDialog startAnimating];
+}
+
+- (void)configureSettlementProperty
+{
+    self.settlements = [[NSArray alloc] init];
+}
+
+- (void)fetchSettlement
+{
+    FOMCommunicationHandler *communicationHandler = [[FOMCommunicationHandler alloc] init];
+    [communicationHandler setDelegate:self];
+    [communicationHandler startPostConnectionWithAddress:[FOMConfigurationProvider settlementServiceAddress:self.order.orderId] andBody:nil];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -34,18 +64,17 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return [self.settlements count] > 0 ? 2 : 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return section == 0 ? 4 : 1;
+    return section == 0 ? 4 : [self.settlements count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *identifier = indexPath.section == 0 ? @"RightDetail" : @"ActionCell";
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:identifier];
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"RightDetail"];
     
     if (indexPath.section == 0)
     {
@@ -76,9 +105,12 @@
         cell.textLabel.text = leftText;
         cell.detailTextLabel.text = rightText;
     }
-    else
+    else if (indexPath.section == 1)
     {
-        cell.textLabel.text = NSLocalizedString(@"Account", nil);
+        FOMSettlement *settlement = [self.settlements objectAtIndex:indexPath.row];
+        
+        cell.textLabel.text = settlement.name;
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%.02f zł", [settlement.toSettle doubleValue]];
     }
     
     return cell;
@@ -102,7 +134,7 @@
     
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10.0, headerFrame.origin.y, headerFrame.size.width, headerFrame.size.height)];
     label.font = [UIFont boldSystemFontOfSize:17.0];
-    label.text = NSLocalizedString(section == 0 ? @"Details" : @"Actions", nil);
+    label.text = NSLocalizedString(section == 0 ? @"Details" : @"Settlement", nil);
     
     [view addSubview:label];
     
@@ -121,6 +153,29 @@
         FOMOrderItemsSelectionViewController *destinationViewController = segue.destinationViewController;
         destinationViewController.order = self.order;
     }
+}
+
+- (void)communicationForAddress:(NSString *)address finishedSuccessfullyWithResponse:(NSData *)sentData
+{
+    [self hideLoadingDialog];
+    [self parseSettlementResponse:sentData];
+}
+
+- (void)hideLoadingDialog
+{
+    [self.loadingDialog stopAnimating];
+    [self.loadingDialog removeFromSuperview];
+}
+
+- (void)parseSettlementResponse:(NSData *)response
+{
+    self.settlements = [FOMResponseParser parseSettlementsFromResponse:response];
+    [self.tableView reloadData];
+}
+
+- (void)communicationForAddress:(NSString *)address failedWithError:(NSError *)error
+{
+    [self hideLoadingDialog];
 }
 
 @end

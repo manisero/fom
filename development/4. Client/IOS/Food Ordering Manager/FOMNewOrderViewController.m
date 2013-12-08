@@ -171,7 +171,7 @@
     [communicationHandler startPostConnectionWithAddress:[FOMConfigurationProvider createOrdersServiceAddress] andBody:dataToSend];
 }
 
-- (void)communicationFinishedSuccessfully:(NSData *)sentData
+- (void)communicationForAddress:(NSString *)address finishedSuccessfullyWithResponse:(NSData *)sentData
 {
     [self hideCreatingOrderDialog];
     [self storeOrderIdFromResponse:sentData];
@@ -202,7 +202,7 @@
     [alertView show];
 }
 
-- (void)communicationFailedWithError:(NSError *)error
+- (void)communicationForAddress:(NSString *)address failedWithError:(NSError *)error
 {
     [self hideCreatingOrderDialog];
     [self showFailureDialog];

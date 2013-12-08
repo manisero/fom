@@ -8,7 +8,8 @@
 
 "New Order" = "Utwórz zamówienie";
 "New Order Header" = "Nowe zamówienie";
-"Existing Order Header" = "Istniejące zamówienie";
+"My Order Header" = "Moje zamówienia";
+"Available Order Header" = "Otwarte zamówienia";
 "Loading" = "Trwa wczytywanie...";
 "Order Details" = "Szczegóły zamówienia";
 "Order Entries" = "Pozycje zamówienia";
@@ -39,3 +40,4 @@
 "Details" = "Szczegóły";
 "Actions" = "Akcje";
 "Account" = "Rozlicz";
+"Settlement" = "Rozliczenia";

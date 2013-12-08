@@ -16,6 +16,7 @@
 		8CBC02C01854B9DF0088BB72 /* FOMDish.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CBC02BF1854B9DF0088BB72 /* FOMDish.m */; };
 		8CBC02C51854DCAF0088BB72 /* FOMOrderDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CBC02C41854DCAF0088BB72 /* FOMOrderDetailsViewController.m */; };
 		8CBC02C91854DFD20088BB72 /* FOMDateUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CBC02C81854DFD20088BB72 /* FOMDateUtilities.m */; };
+		8CBC02CC1854EFB00088BB72 /* FOMSettlement.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CBC02CB1854EFB00088BB72 /* FOMSettlement.m */; };
 		8CEF3B1318537DCE0046C217 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEF3B1218537DCE0046C217 /* Foundation.framework */; };
 		8CEF3B1518537DCE0046C217 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEF3B1418537DCE0046C217 /* CoreGraphics.framework */; };
 		8CEF3B1718537DCE0046C217 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEF3B1618537DCE0046C217 /* UIKit.framework */; };
@@ -71,6 +72,8 @@
 		8CBC02C41854DCAF0088BB72 /* FOMOrderDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOMOrderDetailsViewController.m; sourceTree = "<group>"; };
 		8CBC02C71854DFD20088BB72 /* FOMDateUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOMDateUtilities.h; sourceTree = "<group>"; };
 		8CBC02C81854DFD20088BB72 /* FOMDateUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOMDateUtilities.m; sourceTree = "<group>"; };
+		8CBC02CA1854EFB00088BB72 /* FOMSettlement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOMSettlement.h; sourceTree = "<group>"; };
+		8CBC02CB1854EFB00088BB72 /* FOMSettlement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOMSettlement.m; sourceTree = "<group>"; };
 		8CEF3B0F18537DCE0046C217 /* Food Ordering Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Food Ordering Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CEF3B1218537DCE0046C217 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8CEF3B1418537DCE0046C217 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -294,6 +297,8 @@
 				8CEF3B6518539EAE0046C217 /* FOMOrderItem.m */,
 				8CBC02BE1854B9DF0088BB72 /* FOMDish.h */,
 				8CBC02BF1854B9DF0088BB72 /* FOMDish.m */,
+				8CBC02CA1854EFB00088BB72 /* FOMSettlement.h */,
+				8CBC02CB1854EFB00088BB72 /* FOMSettlement.m */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -489,6 +494,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CBC02BD1854B2EF0088BB72 /* FOMOrderItemDetailsViewController.m in Sources */,
+				8CBC02CC1854EFB00088BB72 /* FOMSettlement.m in Sources */,
 				8CEF3B2918537DCE0046C217 /* FOMRootViewController.m in Sources */,
 				8CEF3B691853A3AB0046C217 /* FOMRestaurantSelectionViewController.m in Sources */,
 				8CBC02C91854DFD20088BB72 /* FOMDateUtilities.m in Sources */,

@@ -7,12 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FOMCommunicationHandlerDelegate.h"
+#import "FOMLoadingDialog.h"
 #import "FOMOrder.h"
 
-@interface FOMOrderDetailsViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+@interface FOMOrderDetailsViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, FOMCommunicationHandlerDelegate>
 
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) FOMLoadingDialog *loadingDialog;
 @property (nonatomic, strong) FOMOrder *order;
+@property (nonatomic, strong) NSArray *settlements;
 
 - (IBAction)addOrderItemsButtonPushed:(id)sender;
 

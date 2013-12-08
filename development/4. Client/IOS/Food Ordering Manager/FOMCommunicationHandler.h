@@ -15,6 +15,7 @@
 
 @property (nonatomic, strong) NSURLConnection *connection;
 @property (nonatomic, strong) NSMutableData *data;
+@property (nonatomic, strong) NSString *address;
 
 - (void)startGetConnectionWithAddress:(NSString *)address;
 - (void)startPostConnectionWithAddress:(NSString *)address andBody:(NSData *)body;

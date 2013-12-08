@@ -35,11 +35,11 @@
     return serviceAddress;
 }
 
-+ (NSString *)ordersServiceAddress
++ (NSString *)ordersServiceAddressForStatus:(NSString *)status
 {
     NSString *serviceAddress = [[NSUserDefaults standardUserDefaults] valueForKey:@"serviceAddress"];
     serviceAddress = serviceAddress != nil ? serviceAddress : [self defaultServiceAddress];
-    serviceAddress = [NSString stringWithFormat:@"%@%@", serviceAddress, @"api/orders"];
+    serviceAddress = [NSString stringWithFormat:@"%@%@%@", serviceAddress, @"api/orders/", status];
     
     return serviceAddress;
 }
@@ -86,6 +86,24 @@
     userEmailAddress = userEmailAddress != nil ? userEmailAddress : [self defaultUserEmailAddress];
     
     return userEmailAddress;
+}
+
++ (NSString *)settlementServiceAddress:(NSNumber *)orderId
+{
+    NSString *serviceAddress = [[NSUserDefaults standardUserDefaults] valueForKey:@"serviceAddress"];
+    serviceAddress = serviceAddress != nil ? serviceAddress : [self defaultServiceAddress];
+    serviceAddress = [NSString stringWithFormat:@"%@%@%@%@", serviceAddress, @"api/orders/", orderId, @"/settle"];
+    
+    return serviceAddress;
+}
+
++ (NSString *)myOrdersServiceAddress
+{
+    NSString *serviceAddress = [[NSUserDefaults standardUserDefaults] valueForKey:@"serviceAddress"];
+    serviceAddress = serviceAddress != nil ? serviceAddress : [self defaultServiceAddress];
+    serviceAddress = [NSString stringWithFormat:@"%@%@%@%@", serviceAddress, @"api/users/", [self userEmailAddress], @"/orders"];
+    
+    return serviceAddress;
 }
 
 @end
