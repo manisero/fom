@@ -11,6 +11,8 @@ namespace DataAccess.ModelConfiguration.Configurations
             entity.Property(x => x.RestaurantAddress).HasMaxLength(512);
             entity.Property(x => x.RestaurantPhoneNumber).HasMaxLength(32);
             entity.Property(x => x.RestaurantEmailAddress).HasMaxLength(256);
+
+            entity.HasRequired(x => x.Owner);
         }
     }
 }
