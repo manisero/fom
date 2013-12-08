@@ -10,6 +10,7 @@
 #import "FOMConfigurationProvider.h"
 #import "FOMLoadingDialog.h"
 #import "FOMOrder.h"
+#import "FOMOrderDetailsViewController.h"
 #import "FOMResponseParser.h"
 #import "FOMRootViewController.h"
 
@@ -90,7 +91,8 @@
     }
     else
     {
-        
+        self.selectedOrder = [self.orders objectAtIndex:indexPath.row];
+        [self performSegueWithIdentifier:@"OrderDetails" sender:self];
     }
 }
 
@@ -112,6 +114,15 @@
     [view addSubview:label];
     
     return view;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"OrderDetails"])
+    {
+        FOMOrderDetailsViewController *destinationViewController = segue.destinationViewController;
+        destinationViewController.order = self.selectedOrder;
+    }
 }
 
 - (void)communicationFinishedSuccessfully:(NSData *)sentData

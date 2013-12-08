@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "FOMCommunicationHandlerDelegate.h"
 #import "FOMDishDataDelegate.h"
+#import "FOMLoadingDialog.h"
 #import "FOMOrder.h"
 
 @interface FOMOrderItemsSelectionViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, FOMDishDataDelegate, FOMCommunicationHandlerDelegate, UIAlertViewDelegate>

@@ -16,7 +16,9 @@
 @property (nonatomic, strong) NSDate *date;
 @property (nonatomic, strong) NSArray *items;
 @property (nonatomic, strong) NSNumber *orderId;
+@property (nonatomic, strong) NSString *orderer;
+@property (nonatomic, strong) NSString *status;
 
-+ (FOMOrder *)orderWithName:(NSString *)name deliveryDate:(NSDate *)date restaurant:(FOMRestaurant *)restaurant andIdentifier:(NSNumber *)orderId;
++ (FOMOrder *)orderWithName:(NSString *)name deliveryDate:(NSDate *)date restaurant:(FOMRestaurant *)restaurant orderer:(NSString *)orderer status:(NSString *)status andIdentifier:(NSNumber *)orderId;
 
 @end

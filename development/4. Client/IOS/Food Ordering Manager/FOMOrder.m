@@ -22,13 +22,15 @@
     return self;
 }
 
-+ (FOMOrder *)orderWithName:(NSString *)name deliveryDate:(NSDate *)date restaurant:(FOMRestaurant *)restaurant andIdentifier:(NSNumber *)orderId
++ (FOMOrder *)orderWithName:(NSString *)name deliveryDate:(NSDate *)date restaurant:(FOMRestaurant *)restaurant orderer:(NSString *)orderer status:(NSString *)status andIdentifier:(NSNumber *)orderId
 {
     FOMOrder *order = [[FOMOrder alloc] init];
     order.name = name;
     order.date = date;
     order.restaurant = restaurant;
+    order.orderer = orderer;
     order.orderId = orderId;
+    order.status = status;
     
     return order;
 }

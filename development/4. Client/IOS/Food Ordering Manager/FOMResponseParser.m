@@ -79,9 +79,11 @@
         NSNumber *orderId = [order objectForKey:@"OrderID"];
         NSString *restaurantName = [order objectForKey:@"RestaurantName"];
         NSNumber *restaurantId = [order objectForKey:@"RestaurantID"];
+        NSString *owner = [[order objectForKey:@"Owner"] objectForKey:@"Name"];
+        NSString *status = [order objectForKey:@"Status"];
         
         FOMRestaurant *restaurant = [FOMRestaurant restaurantWithName:restaurantName andIdentifier:restaurantId];
-        FOMOrder *order = [FOMOrder orderWithName:restaurantName deliveryDate:[FOMResponseParser parseDeliveryDate:deliveryDate andDeliveryTime:intendedDeliveryTime] restaurant:restaurant andIdentifier:orderId];
+        FOMOrder *order = [FOMOrder orderWithName:restaurantName deliveryDate:[FOMResponseParser parseDeliveryDate:deliveryDate andDeliveryTime:intendedDeliveryTime] restaurant:restaurant orderer:owner status:status andIdentifier:orderId];
         
         [orders addObject:order];
     }
