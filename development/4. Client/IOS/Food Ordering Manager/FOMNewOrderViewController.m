@@ -168,7 +168,7 @@
     
     FOMCommunicationHandler *communicationHandler = [[FOMCommunicationHandler alloc] init];
     communicationHandler.delegate = self;
-    [communicationHandler startPostConnectionWithAddress:[FOMConfigurationProvider ordersServiceAddress] andBody:dataToSend];
+    [communicationHandler startPostConnectionWithAddress:[FOMConfigurationProvider createOrdersServiceAddress] andBody:dataToSend];
 }
 
 - (void)communicationFinishedSuccessfully:(NSData *)sentData

@@ -7,6 +7,7 @@
 //
 
 #import "FOMDish.h"
+#import "FOMOrder.h"
 #import "FOMResponseParser.h"
 #import "FOMRestaurant.h"
 
@@ -64,6 +65,36 @@
     }
     
     return dishes;
+}
+
++ (NSArray *)parseOrdersFromResponse:(NSData *)response
+{
+    NSMutableArray *orders = [[NSMutableArray alloc] init];
+    NSDictionary *jsonResponse = [self dictionaryFromResponse:response];
+    
+    for (NSDictionary *order in jsonResponse)
+    {
+        NSString *deliveryDate = [order objectForKey:@"DeliveryDate"];
+        NSString *intendedDeliveryTime = [order objectForKey:@"IntendedDeliveryTime"];
+        NSNumber *orderId = [order objectForKey:@"OrderID"];
+        NSString *restaurantName = [order objectForKey:@"RestaurantName"];
+        NSNumber *restaurantId = [order objectForKey:@"RestaurantID"];
+        
+        FOMRestaurant *restaurant = [FOMRestaurant restaurantWithName:restaurantName andIdentifier:restaurantId];
+        FOMOrder *order = [FOMOrder orderWithName:restaurantName deliveryDate:[FOMResponseParser parseDeliveryDate:deliveryDate andDeliveryTime:intendedDeliveryTime] restaurant:restaurant andIdentifier:orderId];
+        
+        [orders addObject:order];
+    }
+    
+    return orders;
+}
+
++ (NSDate *)parseDeliveryDate:(NSString *)deliveryDate andDeliveryTime:(NSString *)deliveryTime
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    
+    return [formatter dateFromString:[NSString stringWithFormat:@"%@ %@", deliveryDate, deliveryTime]];
 }
 
 @end

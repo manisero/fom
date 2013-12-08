@@ -14,5 +14,7 @@
 + (NSString *)ordersServiceAddress;
 + (NSString *)dishesServiceAddress:(NSNumber *)restaurantId;
 + (NSString *)orderItemsServiceAddress:(NSNumber *)orderId;
++ (NSString *)createOrdersServiceAddress;
++ (NSString *)createOrderItemsServiceAddress:(NSNumber *)orderId;
 
 @end

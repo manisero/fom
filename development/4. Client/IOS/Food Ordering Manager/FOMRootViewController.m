@@ -6,8 +6,11 @@
 //  Copyright (c) 2013 Jakub Turek. All rights reserved.
 //
 
+#import "FOMCommunicationHandler.h"
+#import "FOMConfigurationProvider.h"
 #import "FOMLoadingDialog.h"
 #import "FOMOrder.h"
+#import "FOMResponseParser.h"
 #import "FOMRootViewController.h"
 
 @interface FOMRootViewController ()
@@ -25,7 +28,22 @@
 
 - (void)fetchOrders
 {
-    self.orders = [[NSArray alloc] initWithObjects:[FOMOrder orderWithName:@"Order 1"], [FOMOrder orderWithName:@"Order 2"], nil];
+    [self showLoadingDialog];
+    [self invokeFetchRemoteOrders];
+}
+
+- (void)showLoadingDialog
+{
+    self.loadingDialog = [[FOMLoadingDialog alloc] initWithFrame:self.view.frame];
+    [self.view addSubview:self.loadingDialog];
+    [self.loadingDialog startAnimating];
+}
+
+- (void)invokeFetchRemoteOrders
+{
+    FOMCommunicationHandler *communicationHandler = [[FOMCommunicationHandler alloc] init];
+    [communicationHandler setDelegate:self];
+    [communicationHandler startGetConnectionWithAddress:[FOMConfigurationProvider ordersServiceAddress]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -94,6 +112,29 @@
     [view addSubview:label];
     
     return view;
+}
+
+- (void)communicationFinishedSuccessfully:(NSData *)sentData
+{
+    [self hideLoadingDialog];
+    [self setOrdersFromResponse:sentData];
+}
+
+- (void)hideLoadingDialog
+{
+    [self.loadingDialog stopAnimating];
+    [self.loadingDialog removeFromSuperview];
+}
+
+- (void)setOrdersFromResponse:(NSData *)response
+{
+    self.orders = [FOMResponseParser parseOrdersFromResponse:response];
+    [self.tableView reloadData];
+}
+
+- (void)communicationFailedWithError:(NSError *)error
+{
+    [self hideLoadingDialog];
 }
 
 @end

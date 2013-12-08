@@ -133,7 +133,7 @@
     
     FOMCommunicationHandler *communicationHandler = [[FOMCommunicationHandler alloc] init];
     [communicationHandler setDelegate:self];
-    [communicationHandler startPutConnectionWithAddress:[FOMConfigurationProvider orderItemsServiceAddress:self.order.orderId] andBody:orderItems];
+    [communicationHandler startPutConnectionWithAddress:[FOMConfigurationProvider createOrderItemsServiceAddress:self.order.orderId] andBody:orderItems];
 }
 
 - (IBAction)addItemButtonClicked:(id)sender

@@ -17,6 +17,6 @@
 @property (nonatomic, strong) NSArray *items;
 @property (nonatomic, strong) NSNumber *orderId;
 
-+ (FOMOrder *)orderWithName:(NSString *)name;
++ (FOMOrder *)orderWithName:(NSString *)name deliveryDate:(NSDate *)date restaurant:(FOMRestaurant *)restaurant andIdentifier:(NSNumber *)orderId;
 
 @end

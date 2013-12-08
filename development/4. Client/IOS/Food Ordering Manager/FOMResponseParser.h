@@ -13,5 +13,6 @@
 + (NSArray *)parseRestaurantsFromResponse:(NSData *)response;
 + (NSNumber *)parseOrderIdFromResponse:(NSData *)response;
 + (NSArray *)parseDishesFromResponse:(NSData *)response;
++ (NSArray *)parseOrdersFromResponse:(NSData *)response;
 
 @end

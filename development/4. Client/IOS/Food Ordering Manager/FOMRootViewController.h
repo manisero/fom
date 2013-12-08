@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FOMCommunicationHandlerDelegate.h"
+#import "FOMLoadingDialog.h"
 
-@interface FOMRootViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+@interface FOMRootViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, FOMCommunicationHandlerDelegate>
 
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) FOMLoadingDialog *loadingDialog;
 @property (nonatomic, strong) NSArray *orders;
 
 @end
