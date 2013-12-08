@@ -4,9 +4,9 @@
     {
         public int OrderItemID { get; set; }
 
-        public Order Order { get; set; }
+        public virtual Order Order { get; set; }
 
-        public Person Owner { get; set; }
+        public virtual Person Owner { get; set; }
 
         public string DishName { get; set; }
 
