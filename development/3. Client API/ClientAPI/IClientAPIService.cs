@@ -20,5 +20,9 @@ namespace ClientAPI
         [OperationContract]
         [WebInvoke(UriTemplate = "/orders", Method = "POST")]
         CreateOrderResponse CreateOrder(Order order);
+
+        [OperationContract]
+        [WebInvoke(UriTemplate = "/orders/{orderId}/items", Method = "PUT")]
+        void CreateOrderItems(string orderId, IEnumerable<OrderItem> orderItem);
     }
 }

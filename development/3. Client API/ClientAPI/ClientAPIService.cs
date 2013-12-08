@@ -44,5 +44,10 @@ namespace ClientAPI
 
             return new CreateOrderResponse { OrderID = newOrder.OrderID };
         }
+
+        public void CreateOrderItems(string orderId, IEnumerable<OrderItem> orderItem)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
