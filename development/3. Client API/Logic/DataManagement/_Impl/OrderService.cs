@@ -27,10 +27,9 @@ namespace Logic.DataManagement._Impl
             return _repositoryFactory.Create<Order>().GetAll();
         }
 
-        public Order CreateOrder(int restaurantId, OrderInfo orderInfo)
+        public Order CreateOrder(string ownerName, int restaurantId, OrderInfo orderInfo)
         {
-            // TODO: Retrieve order owner
-            var owner = _repositoryFactory.Create<Person>().GetAll().FirstOrDefault();
+            var owner = _repositoryFactory.Create<Person>().GetSingleOrDefault(x => x.Name == ownerName);
 
             if (owner == null)
             {

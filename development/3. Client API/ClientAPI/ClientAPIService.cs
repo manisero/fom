@@ -43,9 +43,9 @@ namespace ClientAPI
             return _orderService.GetOrders().MapToCollection<Order>().ToList();
         }
 
-        public CreateOrderResponse CreateOrder(Order order)
+        public CreateOrderResponse CreateUserOrder(string userName, Order order)
         {
-            var newOrder = _orderService.CreateOrder(order.RestaurantID, order.MapTo<OrderInfo>());
+            var newOrder = _orderService.CreateOrder(userName, order.RestaurantID, order.MapTo<OrderInfo>());
 
             return new CreateOrderResponse { OrderID = newOrder.OrderID };
         }
