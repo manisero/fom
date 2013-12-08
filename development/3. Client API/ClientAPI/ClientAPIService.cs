@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.ServiceModel;
 using System.ServiceModel.Activation;
@@ -7,6 +6,7 @@ using ClientAPI.Contract.Responses;
 using DataSource.DataAccess;
 using ClientAPI.AutoMapper.Extensions;
 using System.Linq;
+using Domain;
 using Logic.DataManagement;
 using Logic.DataManagement.Model;
 using Core.Extensions;
@@ -38,19 +38,24 @@ namespace ClientAPI
             return restaurant.Dishes.MapToCollection<Dish>().ToList();
         }
 
-        public List<Order> GetAllOrders()
+        public List<Contract.Order> GetAllOrders()
         {
-            return _orderService.GetOrders().MapToCollection<Order>().ToList();
+            return _orderService.GetOrders().MapToCollection<Contract.Order>().ToList();
         }
 
-        public CreateOrderResponse CreateUserOrder(string userName, Order order)
+        public List<Contract.Order> GetOrdersByStatus(string status)
+        {
+            return _orderService.GetOrdersByStatus(status.ToEnum<OrderStatus>()).MapToCollection<Contract.Order>().ToList();
+        }
+
+        public CreateOrderResponse CreateUserOrder(string userName, Contract.Order order)
         {
             var newOrder = _orderService.CreateOrder(userName, order.RestaurantID, order.MapTo<OrderInfo>());
 
             return new CreateOrderResponse { OrderID = newOrder.OrderID };
         }
 
-        public void CreateOrderItems(string userName, string orderId, IEnumerable<OrderItem> orderItems)
+        public void CreateOrderItems(string userName, string orderId, IEnumerable<Contract.OrderItem> orderItems)
         {
             _orderService.CreateOrderItems(userName, orderId.ToInt(), orderItems.MapToCollection<OrderItemInfo>());
         }

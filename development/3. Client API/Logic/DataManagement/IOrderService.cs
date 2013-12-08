@@ -7,6 +7,8 @@ namespace Logic.DataManagement
     public interface IOrderService
     {
         IEnumerable<Order> GetOrders();
+
+        IEnumerable<Order> GetOrdersByStatus(OrderStatus status);
             
         Order CreateOrder(string ownerName, int restaurantId, OrderInfo orderInfo);
 
