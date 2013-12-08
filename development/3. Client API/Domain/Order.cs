@@ -7,7 +7,7 @@ namespace Domain
     {
         public int OrderID { get; set; }
 
-        public Person Owner { get; set; }
+        public virtual Person Owner { get; set; }
 
         public int RestaurantID { get; set; }
 
@@ -23,7 +23,7 @@ namespace Domain
 
         public TimeSpan? IntendedDeliveryTime { get; set; }
 
-        public string Status { get; set; }
+        public OrderStatus Status { get; set; }
 
         public virtual IList<OrderItem> OrderItems { get; set; }
     }

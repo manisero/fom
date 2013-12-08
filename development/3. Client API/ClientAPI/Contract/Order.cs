@@ -9,6 +9,9 @@ namespace ClientAPI.Contract
         public int OrderID { get; set; }
 
         [DataMember]
+        public Person Owner { get; set; }
+
+        [DataMember]
         public int RestaurantID { get; set; }
 
         [DataMember]

@@ -121,6 +121,7 @@
     <Compile Include="Contract\Dish.cs" />
     <Compile Include="Contract\Order.cs" />
     <Compile Include="Contract\OrderItem.cs" />
+    <Compile Include="Contract\Person.cs" />
     <Compile Include="Contract\Responses\CreateOrderResponse.cs" />
     <Compile Include="Contract\Restaurant.cs" />
     <Compile Include="Global.asax.cs">
