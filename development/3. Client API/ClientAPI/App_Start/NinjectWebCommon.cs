@@ -56,7 +56,6 @@ namespace ClientAPI.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             new NinjectBootstrapper().RegisterApplicationModules(kernel);
-            DependencyResolverContainer.DependencyResolver = kernel.Get<IDependencyResolver>();
         }
     }
 }

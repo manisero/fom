@@ -3,7 +3,6 @@ using System.ServiceModel.Activation;
 using System.Web;
 using System.Web.Routing;
 using ClientAPI.AutoMapper;
-using ClientAPI._Impl;
 using Ninject.Extensions.Wcf;
 
 namespace ClientAPI

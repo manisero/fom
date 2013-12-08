@@ -6,7 +6,7 @@ using DataSource.DataAccess;
 using ClientAPI.AutoMapper.Extensions;
 using System.Linq;
 
-namespace ClientAPI._Impl
+namespace ClientAPI
 {
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerCall)]
