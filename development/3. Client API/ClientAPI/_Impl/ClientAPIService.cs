@@ -14,9 +14,9 @@ namespace ClientAPI._Impl
     {
         private readonly IDataProvider _dataProvider;
 
-        public ClientAPIService()
+        public ClientAPIService(IDataProvider dataProvider)
         {
-            _dataProvider = DependencyResolverContainer.DependencyResolver.Resolve<IDataProvider>();
+            _dataProvider = dataProvider;
         }
 
         public List<Restaurant> GetAllRestaurants()
