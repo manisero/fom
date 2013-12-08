@@ -8,8 +8,8 @@ namespace Logic.DataManagement
     {
         IEnumerable<Order> GetOrders();
             
-        Order CreateOrder(int restaurantId, OrderInfo orderInfo);
+        Order CreateOrder(string ownerName, int restaurantId, OrderInfo orderInfo);
 
-        void CreateOrderItems(int orderId, IEnumerable<OrderItemInfo> orderItemInfos);
+        void CreateOrderItems(string ownerName, int orderId, IEnumerable<OrderItemInfo> orderItemInfos);
     }
 }

@@ -17,7 +17,8 @@ namespace ClientAPI.AutoMapper.Profiles
                 .Map(x => x.Dish_ID, x => x.DishID);
 
             // Domain -> Contract
-            CreateMap<Domain.Order, Contract.Order>();
+            CreateMap<Domain.Order, Contract.Order>()
+                .Map(x => x.DeliveryDate.ToShortDateString(), x => x.DeliveryDate);
 
             // Contract -> Domain
             CreateMap<Contract.Order, Domain.Order>();

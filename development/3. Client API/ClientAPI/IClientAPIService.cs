@@ -22,11 +22,11 @@ namespace ClientAPI
         List<Order> GetAllOrders();
 
         [OperationContract]
-        [WebInvoke(UriTemplate = "/orders", Method = "POST")]
-        CreateOrderResponse CreateOrder(Order order);
+        [WebInvoke(UriTemplate = "users/{userName}/orders", Method = "POST")]
+        CreateOrderResponse CreateUserOrder(string userName, Order order);
 
         [OperationContract]
-        [WebInvoke(UriTemplate = "/orders/{orderId}/items", Method = "PUT")]
-        void CreateOrderItems(string orderId, IEnumerable<OrderItem> orderItems);
+        [WebInvoke(UriTemplate = "users/{userName}/orders/{orderId}/items", Method = "PUT")]
+        void CreateOrderItems(string userName, string orderId, IEnumerable<OrderItem> orderItems);
     }
 }

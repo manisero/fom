@@ -43,16 +43,16 @@ namespace ClientAPI
             return _orderService.GetOrders().MapToCollection<Order>().ToList();
         }
 
-        public CreateOrderResponse CreateOrder(Order order)
+        public CreateOrderResponse CreateUserOrder(string userName, Order order)
         {
-            var newOrder = _orderService.CreateOrder(order.RestaurantID, order.MapTo<OrderInfo>());
+            var newOrder = _orderService.CreateOrder(userName, order.RestaurantID, order.MapTo<OrderInfo>());
 
             return new CreateOrderResponse { OrderID = newOrder.OrderID };
         }
 
-        public void CreateOrderItems(string orderId, IEnumerable<OrderItem> orderItems)
+        public void CreateOrderItems(string userName, string orderId, IEnumerable<OrderItem> orderItems)
         {
-            _orderService.CreateOrderItems(orderId.ToInt(), orderItems.MapToCollection<OrderItemInfo>());
+            _orderService.CreateOrderItems(userName, orderId.ToInt(), orderItems.MapToCollection<OrderItemInfo>());
         }
     }
 }
