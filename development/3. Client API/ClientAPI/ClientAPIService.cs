@@ -48,6 +48,11 @@ namespace ClientAPI
             return _orderService.GetOrdersByStatus(status.ToEnum<OrderStatus>()).MapToCollection<Contract.Order>().ToList();
         }
 
+        public List<Contract.Payment> SetOrder(string orderId)
+        {
+            return _orderService.SetOrder(orderId.ToInt()).MapToCollection<Contract.Payment>().ToList();
+        }
+        
         public CreateOrderResponse CreateUserOrder(string userName, Contract.Order order)
         {
             var newOrder = _orderService.CreateOrder(userName, order.RestaurantID, order.MapTo<OrderInfo>());

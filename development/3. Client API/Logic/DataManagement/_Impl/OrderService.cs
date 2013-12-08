@@ -32,6 +32,27 @@ namespace Logic.DataManagement._Impl
             return _repositoryFactory.Create<Order>().GetWhere(x => x.Status == status);
         }
 
+        public IEnumerable<Payment> SetOrder(int orderId)
+        {
+            var order = _repositoryFactory.Create<Order>().GetSingleOrDefault(x => x.OrderID == orderId);
+
+            if (order == null)
+            {
+                throw new InvalidOperationException("Order of ID '{0}' does not exist".FormatWith(orderId));
+            }
+
+            order.Status = OrderStatus.Set;
+            _unitOfWork.SaveChanges();
+
+            return order.OrderItems.Where(x => x.Owner != order.Owner)
+                        .GroupBy(x => x.Owner)
+                        .Select(x => new Payment
+                            {
+                                Person = x.Key,
+                                Amount = x.Sum(item => item.DishPrice * item.Quantity)
+                            }).ToList();
+        }
+
         public Order CreateOrder(string ownerName, int restaurantId, OrderInfo orderInfo)
         {
             var owner = _repositoryFactory.Create<Person>().GetSingleOrDefault(x => x.Name == ownerName);
