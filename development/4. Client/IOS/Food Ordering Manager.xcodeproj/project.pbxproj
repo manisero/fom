@@ -1,0 +1,735 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8CBC02A6185483530088BB72 /* DefaultConfiguration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8CBC02A5185483530088BB72 /* DefaultConfiguration.plist */; };
+		8CBC02AC185488670088BB72 /* FOMResponseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CBC02AB185488670088BB72 /* FOMResponseParser.m */; };
+		8CBC02B01854944F0088BB72 /* FOMDateSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CBC02AF1854944F0088BB72 /* FOMDateSelectionViewController.m */; };
+		8CBC02B51854A5320088BB72 /* FOMRequestCompiler.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CBC02B41854A5320088BB72 /* FOMRequestCompiler.m */; };
+		8CBC02B91854A9AF0088BB72 /* FOMOrderItemsSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CBC02B81854A9AF0088BB72 /* FOMOrderItemsSelectionViewController.m */; };
+		8CBC02BD1854B2EF0088BB72 /* FOMOrderItemDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CBC02BC1854B2EF0088BB72 /* FOMOrderItemDetailsViewController.m */; };
+		8CBC02C01854B9DF0088BB72 /* FOMDish.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CBC02BF1854B9DF0088BB72 /* FOMDish.m */; };
+		8CBC02C51854DCAF0088BB72 /* FOMOrderDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CBC02C41854DCAF0088BB72 /* FOMOrderDetailsViewController.m */; };
+		8CBC02C91854DFD20088BB72 /* FOMDateUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CBC02C81854DFD20088BB72 /* FOMDateUtilities.m */; };
+		8CBC02CC1854EFB00088BB72 /* FOMSettlement.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CBC02CB1854EFB00088BB72 /* FOMSettlement.m */; };
+		8CEF3B1318537DCE0046C217 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEF3B1218537DCE0046C217 /* Foundation.framework */; };
+		8CEF3B1518537DCE0046C217 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEF3B1418537DCE0046C217 /* CoreGraphics.framework */; };
+		8CEF3B1718537DCE0046C217 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEF3B1618537DCE0046C217 /* UIKit.framework */; };
+		8CEF3B1F18537DCE0046C217 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF3B1E18537DCE0046C217 /* main.m */; };
+		8CEF3B2318537DCE0046C217 /* FOMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF3B2218537DCE0046C217 /* FOMAppDelegate.m */; };
+		8CEF3B2618537DCE0046C217 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CEF3B2418537DCE0046C217 /* Main.storyboard */; };
+		8CEF3B2918537DCE0046C217 /* FOMRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF3B2818537DCE0046C217 /* FOMRootViewController.m */; };
+		8CEF3B2B18537DCE0046C217 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CEF3B2A18537DCE0046C217 /* Images.xcassets */; };
+		8CEF3B3218537DCE0046C217 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEF3B3118537DCE0046C217 /* XCTest.framework */; };
+		8CEF3B3318537DCE0046C217 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEF3B1218537DCE0046C217 /* Foundation.framework */; };
+		8CEF3B3418537DCE0046C217 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEF3B1618537DCE0046C217 /* UIKit.framework */; };
+		8CEF3B3E18537DCE0046C217 /* Food_Ordering_ManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF3B3D18537DCE0046C217 /* Food_Ordering_ManagerTests.m */; };
+		8CEF3B4A1853812E0046C217 /* FOMOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF3B491853812E0046C217 /* FOMOrder.m */; };
+		8CEF3B51185384E30046C217 /* FOMNewOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF3B50185384E30046C217 /* FOMNewOrderViewController.m */; };
+		8CEF3B56185387B60046C217 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CEF3B58185387B60046C217 /* Localizable.strings */; };
+		8CEF3B6018538C590046C217 /* FOMLoadingDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF3B5F18538C590046C217 /* FOMLoadingDialog.m */; };
+		8CEF3B63185397EC0046C217 /* FOMRestaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF3B62185397EC0046C217 /* FOMRestaurant.m */; };
+		8CEF3B6618539EAE0046C217 /* FOMOrderItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF3B6518539EAE0046C217 /* FOMOrderItem.m */; };
+		8CEF3B691853A3AB0046C217 /* FOMRestaurantSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF3B681853A3AB0046C217 /* FOMRestaurantSelectionViewController.m */; };
+		8CEF3B6F1853B2220046C217 /* FOMCommunicationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF3B6E1853B2210046C217 /* FOMCommunicationHandler.m */; };
+		8CEF3B721853B70E0046C217 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8CEF3B711853B70E0046C217 /* Settings.bundle */; };
+		8CEF3B751853B78D0046C217 /* FOMConfigurationProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF3B741853B78D0046C217 /* FOMConfigurationProvider.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8CEF3B3518537DCE0046C217 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8CEF3B0718537DCE0046C217 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8CEF3B0E18537DCE0046C217;
+			remoteInfo = "Food Ordering Manager";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8CBC02A5185483530088BB72 /* DefaultConfiguration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefaultConfiguration.plist; sourceTree = "<group>"; };
+		8CBC02A7185485A40088BB72 /* FOMCommunicationHandlerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FOMCommunicationHandlerDelegate.h; sourceTree = "<group>"; };
+		8CBC02AA185488670088BB72 /* FOMResponseParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOMResponseParser.h; sourceTree = "<group>"; };
+		8CBC02AB185488670088BB72 /* FOMResponseParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOMResponseParser.m; sourceTree = "<group>"; };
+		8CBC02AE1854944F0088BB72 /* FOMDateSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOMDateSelectionViewController.h; sourceTree = "<group>"; };
+		8CBC02AF1854944F0088BB72 /* FOMDateSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOMDateSelectionViewController.m; sourceTree = "<group>"; };
+		8CBC02B1185498FD0088BB72 /* FOMOrderDateDataDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FOMOrderDateDataDelegate.h; sourceTree = "<group>"; };
+		8CBC02B31854A5320088BB72 /* FOMRequestCompiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOMRequestCompiler.h; sourceTree = "<group>"; };
+		8CBC02B41854A5320088BB72 /* FOMRequestCompiler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOMRequestCompiler.m; sourceTree = "<group>"; };
+		8CBC02B71854A9AF0088BB72 /* FOMOrderItemsSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOMOrderItemsSelectionViewController.h; sourceTree = "<group>"; };
+		8CBC02B81854A9AF0088BB72 /* FOMOrderItemsSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOMOrderItemsSelectionViewController.m; sourceTree = "<group>"; };
+		8CBC02BB1854B2EF0088BB72 /* FOMOrderItemDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOMOrderItemDetailsViewController.h; sourceTree = "<group>"; };
+		8CBC02BC1854B2EF0088BB72 /* FOMOrderItemDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOMOrderItemDetailsViewController.m; sourceTree = "<group>"; };
+		8CBC02BE1854B9DF0088BB72 /* FOMDish.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOMDish.h; sourceTree = "<group>"; };
+		8CBC02BF1854B9DF0088BB72 /* FOMDish.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOMDish.m; sourceTree = "<group>"; };
+		8CBC02C11854BDED0088BB72 /* FOMDishDataDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FOMDishDataDelegate.h; sourceTree = "<group>"; };
+		8CBC02C31854DCAF0088BB72 /* FOMOrderDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOMOrderDetailsViewController.h; sourceTree = "<group>"; };
+		8CBC02C41854DCAF0088BB72 /* FOMOrderDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOMOrderDetailsViewController.m; sourceTree = "<group>"; };
+		8CBC02C71854DFD20088BB72 /* FOMDateUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOMDateUtilities.h; sourceTree = "<group>"; };
+		8CBC02C81854DFD20088BB72 /* FOMDateUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOMDateUtilities.m; sourceTree = "<group>"; };
+		8CBC02CA1854EFB00088BB72 /* FOMSettlement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOMSettlement.h; sourceTree = "<group>"; };
+		8CBC02CB1854EFB00088BB72 /* FOMSettlement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOMSettlement.m; sourceTree = "<group>"; };
+		8CEF3B0F18537DCE0046C217 /* Food Ordering Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Food Ordering Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CEF3B1218537DCE0046C217 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8CEF3B1418537DCE0046C217 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8CEF3B1618537DCE0046C217 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8CEF3B1A18537DCE0046C217 /* Food Ordering Manager-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Food Ordering Manager-Info.plist"; sourceTree = "<group>"; };
+		8CEF3B1E18537DCE0046C217 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8CEF3B2018537DCE0046C217 /* Food Ordering Manager-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Food Ordering Manager-Prefix.pch"; sourceTree = "<group>"; };
+		8CEF3B2118537DCE0046C217 /* FOMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FOMAppDelegate.h; sourceTree = "<group>"; };
+		8CEF3B2218537DCE0046C217 /* FOMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FOMAppDelegate.m; sourceTree = "<group>"; };
+		8CEF3B2518537DCE0046C217 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8CEF3B2718537DCE0046C217 /* FOMRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FOMRootViewController.h; sourceTree = "<group>"; };
+		8CEF3B2818537DCE0046C217 /* FOMRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FOMRootViewController.m; sourceTree = "<group>"; };
+		8CEF3B2A18537DCE0046C217 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8CEF3B3018537DCE0046C217 /* Food Ordering ManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Food Ordering ManagerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CEF3B3118537DCE0046C217 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		8CEF3B3918537DCE0046C217 /* Food Ordering ManagerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Food Ordering ManagerTests-Info.plist"; sourceTree = "<group>"; };
+		8CEF3B3D18537DCE0046C217 /* Food_Ordering_ManagerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Food_Ordering_ManagerTests.m; sourceTree = "<group>"; };
+		8CEF3B481853812E0046C217 /* FOMOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOMOrder.h; sourceTree = "<group>"; };
+		8CEF3B491853812E0046C217 /* FOMOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOMOrder.m; sourceTree = "<group>"; };
+		8CEF3B4F185384E30046C217 /* FOMNewOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOMNewOrderViewController.h; sourceTree = "<group>"; };
+		8CEF3B50185384E30046C217 /* FOMNewOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOMNewOrderViewController.m; sourceTree = "<group>"; };
+		8CEF3B531853870F0046C217 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Main.strings; sourceTree = "<group>"; };
+		8CEF3B59185387BC0046C217 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8CEF3B5E18538C590046C217 /* FOMLoadingDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOMLoadingDialog.h; sourceTree = "<group>"; };
+		8CEF3B5F18538C590046C217 /* FOMLoadingDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOMLoadingDialog.m; sourceTree = "<group>"; };
+		8CEF3B61185397EC0046C217 /* FOMRestaurant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOMRestaurant.h; sourceTree = "<group>"; };
+		8CEF3B62185397EC0046C217 /* FOMRestaurant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOMRestaurant.m; sourceTree = "<group>"; };
+		8CEF3B6418539EAE0046C217 /* FOMOrderItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOMOrderItem.h; sourceTree = "<group>"; };
+		8CEF3B6518539EAE0046C217 /* FOMOrderItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOMOrderItem.m; sourceTree = "<group>"; };
+		8CEF3B671853A3AB0046C217 /* FOMRestaurantSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOMRestaurantSelectionViewController.h; sourceTree = "<group>"; };
+		8CEF3B681853A3AB0046C217 /* FOMRestaurantSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOMRestaurantSelectionViewController.m; sourceTree = "<group>"; };
+		8CEF3B6C1853ABA80046C217 /* FOMRestaurantDataDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FOMRestaurantDataDelegate.h; sourceTree = "<group>"; };
+		8CEF3B6D1853B2210046C217 /* FOMCommunicationHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOMCommunicationHandler.h; sourceTree = "<group>"; };
+		8CEF3B6E1853B2210046C217 /* FOMCommunicationHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOMCommunicationHandler.m; sourceTree = "<group>"; };
+		8CEF3B711853B70E0046C217 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		8CEF3B731853B78D0046C217 /* FOMConfigurationProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOMConfigurationProvider.h; sourceTree = "<group>"; };
+		8CEF3B741853B78D0046C217 /* FOMConfigurationProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOMConfigurationProvider.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8CEF3B0C18537DCE0046C217 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CEF3B1518537DCE0046C217 /* CoreGraphics.framework in Frameworks */,
+				8CEF3B1718537DCE0046C217 /* UIKit.framework in Frameworks */,
+				8CEF3B1318537DCE0046C217 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CEF3B2D18537DCE0046C217 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CEF3B3218537DCE0046C217 /* XCTest.framework in Frameworks */,
+				8CEF3B3418537DCE0046C217 /* UIKit.framework in Frameworks */,
+				8CEF3B3318537DCE0046C217 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8CBC02A8185488420088BB72 /* ResponseParser */ = {
+			isa = PBXGroup;
+			children = (
+				8CBC02AA185488670088BB72 /* FOMResponseParser.h */,
+				8CBC02AB185488670088BB72 /* FOMResponseParser.m */,
+			);
+			name = ResponseParser;
+			sourceTree = "<group>";
+		};
+		8CBC02A9185488500088BB72 /* Handler */ = {
+			isa = PBXGroup;
+			children = (
+				8CEF3B6D1853B2210046C217 /* FOMCommunicationHandler.h */,
+				8CEF3B6E1853B2210046C217 /* FOMCommunicationHandler.m */,
+			);
+			name = Handler;
+			sourceTree = "<group>";
+		};
+		8CBC02AD1854943C0088BB72 /* DateSelection */ = {
+			isa = PBXGroup;
+			children = (
+				8CBC02AE1854944F0088BB72 /* FOMDateSelectionViewController.h */,
+				8CBC02AF1854944F0088BB72 /* FOMDateSelectionViewController.m */,
+			);
+			name = DateSelection;
+			sourceTree = "<group>";
+		};
+		8CBC02B21854A5190088BB72 /* RequestCompiler */ = {
+			isa = PBXGroup;
+			children = (
+				8CBC02B31854A5320088BB72 /* FOMRequestCompiler.h */,
+				8CBC02B41854A5320088BB72 /* FOMRequestCompiler.m */,
+			);
+			name = RequestCompiler;
+			sourceTree = "<group>";
+		};
+		8CBC02B61854A98C0088BB72 /* OrderItemsSelection */ = {
+			isa = PBXGroup;
+			children = (
+				8CBC02B71854A9AF0088BB72 /* FOMOrderItemsSelectionViewController.h */,
+				8CBC02B81854A9AF0088BB72 /* FOMOrderItemsSelectionViewController.m */,
+			);
+			name = OrderItemsSelection;
+			sourceTree = "<group>";
+		};
+		8CBC02BA1854B2CD0088BB72 /* OrderItemDetails */ = {
+			isa = PBXGroup;
+			children = (
+				8CBC02BB1854B2EF0088BB72 /* FOMOrderItemDetailsViewController.h */,
+				8CBC02BC1854B2EF0088BB72 /* FOMOrderItemDetailsViewController.m */,
+			);
+			name = OrderItemDetails;
+			sourceTree = "<group>";
+		};
+		8CBC02C21854DC960088BB72 /* OrderDetails */ = {
+			isa = PBXGroup;
+			children = (
+				8CBC02C31854DCAF0088BB72 /* FOMOrderDetailsViewController.h */,
+				8CBC02C41854DCAF0088BB72 /* FOMOrderDetailsViewController.m */,
+			);
+			name = OrderDetails;
+			sourceTree = "<group>";
+		};
+		8CBC02C61854DFC30088BB72 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				8CBC02C71854DFD20088BB72 /* FOMDateUtilities.h */,
+				8CBC02C81854DFD20088BB72 /* FOMDateUtilities.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		8CEF3B0618537DCE0046C217 = {
+			isa = PBXGroup;
+			children = (
+				8CEF3B1818537DCE0046C217 /* Food Ordering Manager */,
+				8CEF3B3718537DCE0046C217 /* Food Ordering ManagerTests */,
+				8CEF3B1118537DCE0046C217 /* Frameworks */,
+				8CEF3B1018537DCE0046C217 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8CEF3B1018537DCE0046C217 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8CEF3B0F18537DCE0046C217 /* Food Ordering Manager.app */,
+				8CEF3B3018537DCE0046C217 /* Food Ordering ManagerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8CEF3B1118537DCE0046C217 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8CEF3B1218537DCE0046C217 /* Foundation.framework */,
+				8CEF3B1418537DCE0046C217 /* CoreGraphics.framework */,
+				8CEF3B1618537DCE0046C217 /* UIKit.framework */,
+				8CEF3B3118537DCE0046C217 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8CEF3B1818537DCE0046C217 /* Food Ordering Manager */ = {
+			isa = PBXGroup;
+			children = (
+				8CBC02C61854DFC30088BB72 /* Utilities */,
+				8CEF3B701853B6000046C217 /* Configuration */,
+				8CEF3B6B1853AB7C0046C217 /* Delegates */,
+				8CEF3B5C18538C290046C217 /* Components */,
+				8CEF3B5A185388540046C217 /* Communication */,
+				8CEF3B4D185384C30046C217 /* Views */,
+				8CEF3B471853811D0046C217 /* Data */,
+				8CEF3B2118537DCE0046C217 /* FOMAppDelegate.h */,
+				8CEF3B2218537DCE0046C217 /* FOMAppDelegate.m */,
+				8CEF3B2418537DCE0046C217 /* Main.storyboard */,
+				8CEF3B2A18537DCE0046C217 /* Images.xcassets */,
+				8CEF3B1918537DCE0046C217 /* Supporting Files */,
+				8CEF3B58185387B60046C217 /* Localizable.strings */,
+			);
+			path = "Food Ordering Manager";
+			sourceTree = "<group>";
+		};
+		8CEF3B1918537DCE0046C217 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8CEF3B1A18537DCE0046C217 /* Food Ordering Manager-Info.plist */,
+				8CEF3B1E18537DCE0046C217 /* main.m */,
+				8CEF3B2018537DCE0046C217 /* Food Ordering Manager-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8CEF3B3718537DCE0046C217 /* Food Ordering ManagerTests */ = {
+			isa = PBXGroup;
+			children = (
+				8CEF3B3D18537DCE0046C217 /* Food_Ordering_ManagerTests.m */,
+				8CEF3B3818537DCE0046C217 /* Supporting Files */,
+			);
+			path = "Food Ordering ManagerTests";
+			sourceTree = "<group>";
+		};
+		8CEF3B3818537DCE0046C217 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8CEF3B3918537DCE0046C217 /* Food Ordering ManagerTests-Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8CEF3B471853811D0046C217 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				8CEF3B481853812E0046C217 /* FOMOrder.h */,
+				8CEF3B491853812E0046C217 /* FOMOrder.m */,
+				8CEF3B61185397EC0046C217 /* FOMRestaurant.h */,
+				8CEF3B62185397EC0046C217 /* FOMRestaurant.m */,
+				8CEF3B6418539EAE0046C217 /* FOMOrderItem.h */,
+				8CEF3B6518539EAE0046C217 /* FOMOrderItem.m */,
+				8CBC02BE1854B9DF0088BB72 /* FOMDish.h */,
+				8CBC02BF1854B9DF0088BB72 /* FOMDish.m */,
+				8CBC02CA1854EFB00088BB72 /* FOMSettlement.h */,
+				8CBC02CB1854EFB00088BB72 /* FOMSettlement.m */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		8CEF3B4D185384C30046C217 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8CBC02C21854DC960088BB72 /* OrderDetails */,
+				8CBC02BA1854B2CD0088BB72 /* OrderItemDetails */,
+				8CBC02B61854A98C0088BB72 /* OrderItemsSelection */,
+				8CBC02AD1854943C0088BB72 /* DateSelection */,
+				8CEF3B6A1853A3AF0046C217 /* RestaurantSelection */,
+				8CEF3B52185385140046C217 /* Root */,
+				8CEF3B4E185384C80046C217 /* NewOrder */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		8CEF3B4E185384C80046C217 /* NewOrder */ = {
+			isa = PBXGroup;
+			children = (
+				8CEF3B4F185384E30046C217 /* FOMNewOrderViewController.h */,
+				8CEF3B50185384E30046C217 /* FOMNewOrderViewController.m */,
+			);
+			name = NewOrder;
+			sourceTree = "<group>";
+		};
+		8CEF3B52185385140046C217 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				8CEF3B2718537DCE0046C217 /* FOMRootViewController.h */,
+				8CEF3B2818537DCE0046C217 /* FOMRootViewController.m */,
+			);
+			name = Root;
+			sourceTree = "<group>";
+		};
+		8CEF3B5A185388540046C217 /* Communication */ = {
+			isa = PBXGroup;
+			children = (
+				8CBC02B21854A5190088BB72 /* RequestCompiler */,
+				8CBC02A9185488500088BB72 /* Handler */,
+				8CBC02A8185488420088BB72 /* ResponseParser */,
+			);
+			name = Communication;
+			sourceTree = "<group>";
+		};
+		8CEF3B5C18538C290046C217 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				8CEF3B5D18538C2F0046C217 /* LoadingDialog */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		8CEF3B5D18538C2F0046C217 /* LoadingDialog */ = {
+			isa = PBXGroup;
+			children = (
+				8CEF3B5E18538C590046C217 /* FOMLoadingDialog.h */,
+				8CEF3B5F18538C590046C217 /* FOMLoadingDialog.m */,
+			);
+			name = LoadingDialog;
+			sourceTree = "<group>";
+		};
+		8CEF3B6A1853A3AF0046C217 /* RestaurantSelection */ = {
+			isa = PBXGroup;
+			children = (
+				8CEF3B671853A3AB0046C217 /* FOMRestaurantSelectionViewController.h */,
+				8CEF3B681853A3AB0046C217 /* FOMRestaurantSelectionViewController.m */,
+			);
+			name = RestaurantSelection;
+			sourceTree = "<group>";
+		};
+		8CEF3B6B1853AB7C0046C217 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				8CEF3B6C1853ABA80046C217 /* FOMRestaurantDataDelegate.h */,
+				8CBC02A7185485A40088BB72 /* FOMCommunicationHandlerDelegate.h */,
+				8CBC02B1185498FD0088BB72 /* FOMOrderDateDataDelegate.h */,
+				8CBC02C11854BDED0088BB72 /* FOMDishDataDelegate.h */,
+			);
+			name = Delegates;
+			sourceTree = "<group>";
+		};
+		8CEF3B701853B6000046C217 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				8CEF3B711853B70E0046C217 /* Settings.bundle */,
+				8CEF3B731853B78D0046C217 /* FOMConfigurationProvider.h */,
+				8CEF3B741853B78D0046C217 /* FOMConfigurationProvider.m */,
+				8CBC02A5185483530088BB72 /* DefaultConfiguration.plist */,
+			);
+			name = Configuration;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8CEF3B0E18537DCE0046C217 /* Food Ordering Manager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8CEF3B4118537DCE0046C217 /* Build configuration list for PBXNativeTarget "Food Ordering Manager" */;
+			buildPhases = (
+				8CEF3B0B18537DCE0046C217 /* Sources */,
+				8CEF3B0C18537DCE0046C217 /* Frameworks */,
+				8CEF3B0D18537DCE0046C217 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Food Ordering Manager";
+			productName = "Food Ordering Manager";
+			productReference = 8CEF3B0F18537DCE0046C217 /* Food Ordering Manager.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8CEF3B2F18537DCE0046C217 /* Food Ordering ManagerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8CEF3B4418537DCE0046C217 /* Build configuration list for PBXNativeTarget "Food Ordering ManagerTests" */;
+			buildPhases = (
+				8CEF3B2C18537DCE0046C217 /* Sources */,
+				8CEF3B2D18537DCE0046C217 /* Frameworks */,
+				8CEF3B2E18537DCE0046C217 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8CEF3B3618537DCE0046C217 /* PBXTargetDependency */,
+			);
+			name = "Food Ordering ManagerTests";
+			productName = "Food Ordering ManagerTests";
+			productReference = 8CEF3B3018537DCE0046C217 /* Food Ordering ManagerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8CEF3B0718537DCE0046C217 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = FOM;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Jakub Turek";
+				TargetAttributes = {
+					8CEF3B2F18537DCE0046C217 = {
+						TestTargetID = 8CEF3B0E18537DCE0046C217;
+					};
+				};
+			};
+			buildConfigurationList = 8CEF3B0A18537DCE0046C217 /* Build configuration list for PBXProject "Food Ordering Manager" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				pl,
+			);
+			mainGroup = 8CEF3B0618537DCE0046C217;
+			productRefGroup = 8CEF3B1018537DCE0046C217 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8CEF3B0E18537DCE0046C217 /* Food Ordering Manager */,
+				8CEF3B2F18537DCE0046C217 /* Food Ordering ManagerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8CEF3B0D18537DCE0046C217 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CEF3B721853B70E0046C217 /* Settings.bundle in Resources */,
+				8CBC02A6185483530088BB72 /* DefaultConfiguration.plist in Resources */,
+				8CEF3B2B18537DCE0046C217 /* Images.xcassets in Resources */,
+				8CEF3B56185387B60046C217 /* Localizable.strings in Resources */,
+				8CEF3B2618537DCE0046C217 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CEF3B2E18537DCE0046C217 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8CEF3B0B18537DCE0046C217 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CBC02BD1854B2EF0088BB72 /* FOMOrderItemDetailsViewController.m in Sources */,
+				8CBC02CC1854EFB00088BB72 /* FOMSettlement.m in Sources */,
+				8CEF3B2918537DCE0046C217 /* FOMRootViewController.m in Sources */,
+				8CEF3B691853A3AB0046C217 /* FOMRestaurantSelectionViewController.m in Sources */,
+				8CBC02C91854DFD20088BB72 /* FOMDateUtilities.m in Sources */,
+				8CEF3B1F18537DCE0046C217 /* main.m in Sources */,
+				8CEF3B2318537DCE0046C217 /* FOMAppDelegate.m in Sources */,
+				8CBC02C51854DCAF0088BB72 /* FOMOrderDetailsViewController.m in Sources */,
+				8CBC02C01854B9DF0088BB72 /* FOMDish.m in Sources */,
+				8CEF3B6F1853B2220046C217 /* FOMCommunicationHandler.m in Sources */,
+				8CEF3B4A1853812E0046C217 /* FOMOrder.m in Sources */,
+				8CEF3B751853B78D0046C217 /* FOMConfigurationProvider.m in Sources */,
+				8CBC02B01854944F0088BB72 /* FOMDateSelectionViewController.m in Sources */,
+				8CEF3B63185397EC0046C217 /* FOMRestaurant.m in Sources */,
+				8CBC02AC185488670088BB72 /* FOMResponseParser.m in Sources */,
+				8CEF3B51185384E30046C217 /* FOMNewOrderViewController.m in Sources */,
+				8CBC02B51854A5320088BB72 /* FOMRequestCompiler.m in Sources */,
+				8CEF3B6618539EAE0046C217 /* FOMOrderItem.m in Sources */,
+				8CEF3B6018538C590046C217 /* FOMLoadingDialog.m in Sources */,
+				8CBC02B91854A9AF0088BB72 /* FOMOrderItemsSelectionViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CEF3B2C18537DCE0046C217 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CEF3B3E18537DCE0046C217 /* Food_Ordering_ManagerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8CEF3B3618537DCE0046C217 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8CEF3B0E18537DCE0046C217 /* Food Ordering Manager */;
+			targetProxy = 8CEF3B3518537DCE0046C217 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8CEF3B2418537DCE0046C217 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8CEF3B2518537DCE0046C217 /* Base */,
+				8CEF3B531853870F0046C217 /* pl */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8CEF3B58185387B60046C217 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8CEF3B59185387BC0046C217 /* pl */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8CEF3B3F18537DCE0046C217 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		8CEF3B4018537DCE0046C217 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8CEF3B4218537DCE0046C217 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Food Ordering Manager/Food Ordering Manager-Prefix.pch";
+				INFOPLIST_FILE = "Food Ordering Manager/Food Ordering Manager-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		8CEF3B4318537DCE0046C217 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Food Ordering Manager/Food Ordering Manager-Prefix.pch";
+				INFOPLIST_FILE = "Food Ordering Manager/Food Ordering Manager-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		8CEF3B4518537DCE0046C217 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Food Ordering Manager.app/Food Ordering Manager";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Food Ordering Manager/Food Ordering Manager-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Food Ordering ManagerTests/Food Ordering ManagerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		8CEF3B4618537DCE0046C217 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Food Ordering Manager.app/Food Ordering Manager";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Food Ordering Manager/Food Ordering Manager-Prefix.pch";
+				INFOPLIST_FILE = "Food Ordering ManagerTests/Food Ordering ManagerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8CEF3B0A18537DCE0046C217 /* Build configuration list for PBXProject "Food Ordering Manager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CEF3B3F18537DCE0046C217 /* Debug */,
+				8CEF3B4018537DCE0046C217 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8CEF3B4118537DCE0046C217 /* Build configuration list for PBXNativeTarget "Food Ordering Manager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CEF3B4218537DCE0046C217 /* Debug */,
+				8CEF3B4318537DCE0046C217 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8CEF3B4418537DCE0046C217 /* Build configuration list for PBXNativeTarget "Food Ordering ManagerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CEF3B4518537DCE0046C217 /* Debug */,
+				8CEF3B4618537DCE0046C217 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8CEF3B0718537DCE0046C217 /* Project object */;
+}

@@ -5,7 +5,6 @@ from django.db import models
 
 
 class Restaurant(models.Model):
-    restaurant_id = models.AutoField(primary_key=True, default=1)
     name = models.CharField(max_length=256)
     address = models.TextField()
     phone_number = models.CharField(max_length=64)
@@ -16,7 +15,6 @@ class Restaurant(models.Model):
 
 
 class Dish(models.Model):
-    dish_id = models.AutoField(primary_key=True, default=1)
     restaurant = models.ForeignKey('Restaurant', related_name='dishes')
     name = models.CharField(max_length=512)
     price = models.DecimalField(max_digits=5, decimal_places=2)
